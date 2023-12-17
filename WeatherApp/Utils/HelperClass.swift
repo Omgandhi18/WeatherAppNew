@@ -12,12 +12,12 @@ import MessageUI
 // MARK: - Common
 let AlertTitle                      = "Demo"
 let AppDel                          = UIApplication.shared.delegate as? AppDelegate
-//var BASE_URL          = "https://api.eyeonpos.com/api/"
 var date_format = "dd/MM/yyyy"
 var time_format = "hh:mm a"
 var date_time_format = date_format + " " + time_format
 var hrs_min_format = "HH:mm"
 var responseModel = ResponseModelData()
+var responseDate = Date()
 //MARK: ALERT MESSAGE :-
 enum AlertMsg: String {
     case internetConnection         = "The Internet connection appears to be offline."
@@ -590,6 +590,165 @@ func weatherSymbolImageSet(conditions: Conditions,tintColor: String) -> UIImage{
     }
     
 }
+//MARK: Morning Video URL
+func setVideoURLMorning(conditions: Conditions) -> URL{
+    var url: URL?
+    switch(conditions){
+    case.clear: url = Bundle.main.url(forResource: "clearMorning", withExtension: "mp4")!
+        break
+    case .overcast:
+        break
+    case .partiallyCloudy:
+        break
+    case .rainOvercast:
+        break
+    case .rainPartiallyCloudy:
+        break
+    case .rain:
+        break
+    case .snowy:
+        break
+    case .storm:
+        break
+    case .windy:
+        break
+    case .dry:
+        break
+    case .fog:
+        break
+    case .haze:
+        break
+    }
+    
+    return url ?? URL(string: "https://youtu.be/1VMI7nffU-Q")!
+}
+//MARK: Noon Video URL
+func setVideoURLAfternoon(conditions: Conditions) -> URL{
+    var url: URL?
+    switch(conditions){
+    case.clear: url = Bundle.main.url(forResource: "clearNoon", withExtension: "mp4")
+        break
+    case .overcast:
+        break
+    case .partiallyCloudy:
+        break
+    case .rainOvercast:
+        break
+    case .rainPartiallyCloudy:
+        break
+    case .rain:
+        break
+    case .snowy:
+        break
+    case .storm:
+        break
+    case .windy:
+        break
+    case .dry:
+        break
+    case .fog:
+        break
+    case .haze:
+        break
+    }
+    
+    return url ?? URL(string: "https://youtu.be/1VMI7nffU-Q")!
+}
+//MARK: Evening Video URL
+func setVideoURLEvening(conditions: Conditions) -> URL{
+    var url: URL?
+    switch(conditions){
+    case.clear: url = Bundle.main.url(forResource: "clearEvening", withExtension: "mp4")
+        break
+    case .overcast:
+        break
+    case .partiallyCloudy:
+        break
+    case .rainOvercast:
+        break
+    case .rainPartiallyCloudy:
+        break
+    case .rain:
+        break
+    case .snowy:
+        break
+    case .storm:
+        break
+    case .windy:
+        break
+    case .dry:
+        break
+    case .fog:
+        break
+    case .haze:
+        break
+    }
+    
+    return url ?? URL(string: "https://youtu.be/1VMI7nffU-Q")!
+}
+//MARK: Night Video URL
+func setVideoURLNight(conditions: Conditions) -> URL{
+    var url: URL?
+    switch(conditions){
+    case.clear: url = Bundle.main.url(forResource: "clearNight", withExtension: "mp4")
+        break
+    case .overcast:
+        break
+    case .partiallyCloudy:
+        break
+    case .rainOvercast:
+        break
+    case .rainPartiallyCloudy:
+        break
+    case .rain:
+        break
+    case .snowy:
+        break
+    case .storm:
+        break
+    case .windy:
+        break
+    case .dry:
+        break
+    case .fog:
+        break
+    case .haze:
+        break
+    }
+    
+    return url ?? URL(string: "https://youtu.be/1VMI7nffU-Q")!
+}
+//func MorningTime() -> Bool {
+//    guard let start = Formatter.today.date(from: "6:00:00"),
+//          let end = Formatter.today.date(from: "11:59:59") else {
+//        return false
+//    }
+//    return DateInterval(start: start, end: end).contains(Date())
+//}
+//func AfternoonTime() -> Bool {
+//    guard let start = Formatter.today.date(from: "12:00:00"),
+//          let end = Formatter.today.date(from: "16:59:00") else {
+//        return false
+//    }
+//    return DateInterval(start: start, end: end).contains(Date())
+//}
+//func EveningTime() -> Bool {
+//    guard let start = Formatter.today.date(from: "17:00:00"),
+//          let end = Formatter.today.date(from: "22:59:59") else {
+//        return false
+//    }
+//    return DateInterval(start: start, end: end).contains(Date())
+//}
+//func NightTime(dateTime: String) -> Bool {
+//    guard let start = Formatter.today.date(from: "23:00:00"),
+//          let end = Formatter.today.date(from: "5:59:00") else {
+//        return false
+//    }
+//   
+//    let todayDate = Formatter.today.date(from: dateTime)
+//    return DateInterval(start: start, end: end).contains(todayDate ?? Date())
+//    
+//}
 
 //===================================================================
 // MARK: - STRING ====> UIDESIGN
@@ -737,11 +896,11 @@ extension UIView {
     }
    
     func viewShadow(){
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 15
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.4
         self.layer.shadowRadius = 5
-        self.layer.shadowOffset  = CGSize(width: 5, height: 5)
+        self.layer.shadowOffset  = CGSize(width: 1, height: 2)
         self.layer.masksToBounds = false
     }
 }
@@ -766,6 +925,12 @@ extension UILabel{
         
         self.layer.addSublayer(bottomLine)
     }
+    func textDropShadow() {
+            self.layer.masksToBounds = false
+            self.layer.shadowRadius = 5.0
+            self.layer.shadowOpacity = 0.4
+            self.layer.shadowOffset = CGSize(width: 1, height: 2)
+        }
 }
 extension UITextField {
     func makeTextViewBorderWithCurve(radius: CGFloat, bcolor: UIColor = .black, bwidth: CGFloat = 1,leftPadding:CGFloat?=10) {
@@ -848,4 +1013,13 @@ extension UITextField {
     
 
 }
-
+extension DateFormatter {
+    static let today: DateFormatter = {
+        let dateFormatter = DateFormatter()
+//        dateFormatter.locale = .init(identifier: "en_US_POSIX")
+        dateFormatter.defaultDate = Calendar.current.startOfDay(for: Date())
+        dateFormatter.dateFormat = "HH:mm:ss"
+        return dateFormatter
+        
+    }()
+}

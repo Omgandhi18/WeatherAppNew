@@ -7,14 +7,18 @@
 
 import UIKit
 import CoreLocation
+import AVKit
 class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     
     //MARK: Outlets
+    @IBOutlet weak var viewVideo: UIView!
     @IBOutlet weak var lblTemperature: UILabel!
     @IBOutlet weak var lblCityCountry: UILabel!
     @IBOutlet weak var lblTempUnit: UILabel!
-    @IBOutlet weak var imgWeatherSymbol: UIImageView!
+    @IBOutlet weak var lblWeeklyForecast: UILabel!
+    
+    @IBOutlet weak var lblHourlyForecast: UILabel!
     @IBOutlet weak var lblDesc: UILabel!
     @IBOutlet weak var lblConditions: UILabel!
     @IBOutlet weak var lblFeelsLike: UILabel!
@@ -31,6 +35,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
     var cityName = ""
     var dayArray = [CurrentConditions]()
     var hourArray = [CurrentConditions]()
+    var player: AVPlayer!
+    var avpController  = AVPlayerViewController()
     //MARK: ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +82,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
                         }else if let country = placemarks?.first?.country,
                             let city = placemarks?.first?.locality {
                             self.lblCityCountry.text = city + ", " + country
+                            self.lblCityCountry.textDropShadow()
                             self.cityName = city
                            
                             self.getWeatherData(city: self.cityName)
@@ -104,18 +111,91 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
                 clcHourlyWeather.dataSource = self
                 
                 lblTemperature.text = "\(response.currentConditions?.temp ?? 0.00)°"
-                lblTempUnit.text = "Celsius"
-                imgWeatherSymbol.image = weatherSymbolImageSet(conditions: response.currentConditions?.conditions ?? Conditions.clear,tintColor: "MaroonColor")
-                lblConditions.text = response.currentConditions?.conditions?.rawValue
-                lblDesc.text = response.description ?? ""
-                lblFeelsLike.text = "Feels like" + " " + String(response.currentConditions?.feelslike ?? 0.00) + " °C"
-                lblPressure.text = "Pressure: " + String(response.currentConditions?.pressure ?? 0.00) + " Hg"
+                lblTemperature.textDropShadow()
                 
+                lblTempUnit.text = "Celsius"
+                lblTempUnit.textDropShadow()
+               
+                lblConditions.text = response.currentConditions?.conditions?.rawValue
+                lblConditions.textDropShadow()
+                
+                lblDesc.text = response.description ?? ""
+                lblDesc.textDropShadow()
+                
+                lblFeelsLike.text = "Feels like" + " " + String(response.currentConditions?.feelslike ?? 0.00) + " °C"
+                lblFeelsLike.textColor = .white
+                lblFeelsLike.textDropShadow()
+               
+                lblPressure.text = "Pressure: " + String(response.currentConditions?.pressure ?? 0.00) + " Hg"
+                lblPressure.textColor = .white
+                lblPressure.textDropShadow()
+               
+                lblWeeklyForecast.textColor = .white
+                lblWeeklyForecast.textDropShadow()
+               
+                lblHourlyForecast.textColor = .white
+                lblHourlyForecast.textDropShadow()
+               
+                setVideo(response: response)
+                
+                clcDailyWeather.reloadData()
+                clcHourlyWeather.reloadData()
             }OnFail: {[self] err in
                 showAlert(message: err, inViewController: self, forCancel: "", forOther: "Ok", isSingle: true){btn in
                     
                 }
             }
+    }
+    func setVideo(response: ResponseModelData){
+        var url: URL
+        let todayDate = DateFormatter.today.date(from: response.currentConditions?.datetime ?? "00:00:00")
+        responseDate = todayDate ?? Date()
+        if DateInterval(start: DateFormatter.today.date(from: "6:00:00") ?? Date(), end: DateFormatter.today.date(from: "11:59:59") ?? Date()).contains(todayDate ?? Date()){
+            print("Morning")
+            url = setVideoURLMorning(conditions: response.currentConditions?.conditions ?? Conditions.clear)
+        }
+        else if DateInterval(start: DateFormatter.today.date(from: "12:00:00") ?? Date(), end: DateFormatter.today.date(from: "16:59:59") ?? Date()).contains(todayDate ?? Date()){
+            print("Noon")
+            url = setVideoURLAfternoon(conditions: response.currentConditions?.conditions ?? Conditions.clear)
+        }
+        else if DateInterval(start: DateFormatter.today.date(from: "17:00:00") ?? Date(), end: DateFormatter.today.date(from: "22:59:59") ?? Date()).contains(todayDate ?? Date()){
+            print("Evening")
+            url = setVideoURLEvening(conditions: response.currentConditions?.conditions ?? Conditions.clear)
+        }
+        else{
+            print("Night")
+            url = setVideoURLNight(conditions: response.currentConditions?.conditions ?? Conditions.clear)
+        }
+//        else if DateInterval(start: DateFormatter.today.date(from: "23:00:00") ?? Date(), end: DateFormatter.today.date(from: "5:59:59") ?? Date()).contains(todayDate ?? Date()){
+//            print("Night")
+//        }
+//        else{
+//            print("Error in getting time")
+//        }
+        
+        
+//        let url = Bundle.main.url(forResource: "Beach", withExtension: "mp4")
+        player = AVPlayer(url: url)
+        player.isMuted = true
+        avpController.player = player
+        avpController.videoGravity = .resizeAspectFill
+
+        avpController.view.frame.size.height = viewVideo.frame.size.height
+
+        avpController.view.frame.size.width = viewVideo.frame.size.width
+
+        self.viewVideo.addSubview(avpController.view)
+        player.play()
+        loopVideo(videoPlayer: player)
+        
+        
+    }
+    
+    func loopVideo(videoPlayer: AVPlayer){
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil){notification in
+            videoPlayer.seek(to: CMTime.zero)
+            videoPlayer.play()
+        }
     }
     @objc func refresh(_ sender: UIRefreshControl){
         getCity()
@@ -148,12 +228,12 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 120)
+        return CGSize(width: collectionView.frame.width/3, height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DayWiseCell", for: indexPath) as! DayWiseCell
-        cell.layer.cornerRadius = 10
+//        cell.layer.cornerRadius = 15
         var cellObj = CurrentConditions()
         if collectionView == clcDailyWeather{
             cellObj = dayArray[indexPath.row]
@@ -165,7 +245,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
         cell.lblTemp.text = String(cellObj.temp ?? 0.00) + " °C"
         cell.lblLow.text = "Min: " + " " + String(cellObj.tempmin ?? 0.00) + " °C"
         cell.lblHigh.text = "Max: " + " " + String(cellObj.tempmax ?? 0.00) + " °C"
-       
+//        cell.viewShadow()
         return cell
     }
     
