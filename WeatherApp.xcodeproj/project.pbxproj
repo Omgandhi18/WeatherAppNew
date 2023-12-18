@@ -45,6 +45,32 @@
 		34F5ADF72A67C47000E2AFBD /* TwoWeekDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5ADF62A67C47000E2AFBD /* TwoWeekDataVC.swift */; };
 		34F5ADF92A67E48600E2AFBD /* SearchPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5ADF82A67E48600E2AFBD /* SearchPlaceVC.swift */; };
 		92BDAAC298B714A39C6E4F63 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326D8C36FA272514EC5C8423 /* Pods_WeatherApp.framework */; };
+		C01711892B306F6A00C18D5E /* Windy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711722B306E8A00C18D5E /* Windy.mp4 */; };
+		C017118A2B306F6A00C18D5E /* Storm.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711712B306E8400C18D5E /* Storm.mp4 */; };
+		C017118B2B306F6A00C18D5E /* Snowy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711702B306E7E00C18D5E /* Snowy.mp4 */; };
+		C017118C2B306F6A00C18D5E /* rainPartiallyCloudy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C017116F2B306E7500C18D5E /* rainPartiallyCloudy.mp4 */; };
+		C017118D2B306F6A00C18D5E /* rainOvercast.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711732B306E9300C18D5E /* rainOvercast.mp4 */; };
+		C017118E2B306F6A00C18D5E /* rain.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711742B306EA000C18D5E /* rain.mp4 */; };
+		C017118F2B306F6A00C18D5E /* cloudyNight.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711882B306F3A00C18D5E /* cloudyNight.mp4 */; };
+		C01711902B306F6A00C18D5E /* dryNight.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711852B306F3800C18D5E /* dryNight.mp4 */; };
+		C01711912B306F6A00C18D5E /* fogNight.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711842B306F3800C18D5E /* fogNight.mp4 */; };
+		C01711922B306F6A00C18D5E /* hazeNight.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711862B306F3900C18D5E /* hazeNight.mp4 */; };
+		C01711932B306F6A00C18D5E /* overcastNight.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711872B306F3A00C18D5E /* overcastNight.mp4 */; };
+		C01711942B306F6A00C18D5E /* dryEvening.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711812B306F1900C18D5E /* dryEvening.mp4 */; };
+		C01711952B306F6A00C18D5E /* overcastEvening.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711832B306F1B00C18D5E /* overcastEvening.mp4 */; };
+		C01711962B306F6A00C18D5E /* fogEvening.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711822B306F1900C18D5E /* fogEvening.mp4 */; };
+		C01711972B306F6A00C18D5E /* hazeEvening.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711802B306F1900C18D5E /* hazeEvening.mp4 */; };
+		C01711982B306F6A00C18D5E /* cloudyEvening.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C017117F2B306F0800C18D5E /* cloudyEvening.mp4 */; };
+		C01711992B306F6A00C18D5E /* cloudyNoon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C017117B2B306EFE00C18D5E /* cloudyNoon.mp4 */; };
+		C017119A2B306F6A00C18D5E /* fogNoon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C017117D2B306EFE00C18D5E /* fogNoon.mp4 */; };
+		C017119B2B306F6A00C18D5E /* hazeNoon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C017117E2B306EFF00C18D5E /* hazeNoon.mp4 */; };
+		C017119C2B306F6A00C18D5E /* overcastNoon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C017117C2B306EFE00C18D5E /* overcastNoon.mp4 */; };
+		C017119D2B306F6A00C18D5E /* dryNoon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C017117A2B306EE500C18D5E /* dryNoon.mp4 */; };
+		C017119E2B306F6A00C18D5E /* cloudyMorning.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711772B306EC700C18D5E /* cloudyMorning.mp4 */; };
+		C017119F2B306F6A00C18D5E /* fogMorning.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711782B306EC700C18D5E /* fogMorning.mp4 */; };
+		C01711A02B306F6A00C18D5E /* hazeMorning.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711792B306EC700C18D5E /* hazeMorning.mp4 */; };
+		C01711A12B306F6A00C18D5E /* overcastMorning.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711762B306EC700C18D5E /* overcastMorning.mp4 */; };
+		C01711A22B306F6A00C18D5E /* dryMorning.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711752B306EB500C18D5E /* dryMorning.mp4 */; };
 		C09701E62B2F6BF700EB8385 /* clearMorning.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C09701E52B2F6BDE00EB8385 /* clearMorning.mp4 */; };
 		C09701EB2B2F7C3D00EB8385 /* clearEvening.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C09701E82B2F7C1600EB8385 /* clearEvening.mp4 */; };
 		C09701EC2B2F7C3D00EB8385 /* clearNoon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C09701E72B2F7C0500EB8385 /* clearNoon.mp4 */; };
@@ -108,6 +134,32 @@
 		34F5ADF62A67C47000E2AFBD /* TwoWeekDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoWeekDataVC.swift; sourceTree = "<group>"; };
 		34F5ADF82A67E48600E2AFBD /* SearchPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceVC.swift; sourceTree = "<group>"; };
 		46406723D65D019FC0AC7624 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C017116F2B306E7500C18D5E /* rainPartiallyCloudy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rainPartiallyCloudy.mp4; sourceTree = "<group>"; };
+		C01711702B306E7E00C18D5E /* Snowy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Snowy.mp4; sourceTree = "<group>"; };
+		C01711712B306E8400C18D5E /* Storm.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Storm.mp4; sourceTree = "<group>"; };
+		C01711722B306E8A00C18D5E /* Windy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Windy.mp4; sourceTree = "<group>"; };
+		C01711732B306E9300C18D5E /* rainOvercast.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rainOvercast.mp4; sourceTree = "<group>"; };
+		C01711742B306EA000C18D5E /* rain.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rain.mp4; sourceTree = "<group>"; };
+		C01711752B306EB500C18D5E /* dryMorning.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dryMorning.mp4; sourceTree = "<group>"; };
+		C01711762B306EC700C18D5E /* overcastMorning.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = overcastMorning.mp4; sourceTree = "<group>"; };
+		C01711772B306EC700C18D5E /* cloudyMorning.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cloudyMorning.mp4; sourceTree = "<group>"; };
+		C01711782B306EC700C18D5E /* fogMorning.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fogMorning.mp4; sourceTree = "<group>"; };
+		C01711792B306EC700C18D5E /* hazeMorning.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hazeMorning.mp4; sourceTree = "<group>"; };
+		C017117A2B306EE500C18D5E /* dryNoon.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dryNoon.mp4; sourceTree = "<group>"; };
+		C017117B2B306EFE00C18D5E /* cloudyNoon.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cloudyNoon.mp4; sourceTree = "<group>"; };
+		C017117C2B306EFE00C18D5E /* overcastNoon.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = overcastNoon.mp4; sourceTree = "<group>"; };
+		C017117D2B306EFE00C18D5E /* fogNoon.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fogNoon.mp4; sourceTree = "<group>"; };
+		C017117E2B306EFF00C18D5E /* hazeNoon.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hazeNoon.mp4; sourceTree = "<group>"; };
+		C017117F2B306F0800C18D5E /* cloudyEvening.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cloudyEvening.mp4; sourceTree = "<group>"; };
+		C01711802B306F1900C18D5E /* hazeEvening.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hazeEvening.mp4; sourceTree = "<group>"; };
+		C01711812B306F1900C18D5E /* dryEvening.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dryEvening.mp4; sourceTree = "<group>"; };
+		C01711822B306F1900C18D5E /* fogEvening.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fogEvening.mp4; sourceTree = "<group>"; };
+		C01711832B306F1B00C18D5E /* overcastEvening.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = overcastEvening.mp4; sourceTree = "<group>"; };
+		C01711842B306F3800C18D5E /* fogNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fogNight.mp4; sourceTree = "<group>"; };
+		C01711852B306F3800C18D5E /* dryNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dryNight.mp4; sourceTree = "<group>"; };
+		C01711862B306F3900C18D5E /* hazeNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hazeNight.mp4; sourceTree = "<group>"; };
+		C01711872B306F3A00C18D5E /* overcastNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = overcastNight.mp4; sourceTree = "<group>"; };
+		C01711882B306F3A00C18D5E /* cloudyNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cloudyNight.mp4; sourceTree = "<group>"; };
 		C09701DE2B2F5E1500EB8385 /* Beach.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Beach.mp4; path = "../../../../Weather videos/Beach.mp4"; sourceTree = "<group>"; };
 		C09701E52B2F6BDE00EB8385 /* clearMorning.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = clearMorning.mp4; sourceTree = "<group>"; };
 		C09701E72B2F7C0500EB8385 /* clearNoon.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = clearNoon.mp4; sourceTree = "<group>"; };
@@ -248,9 +300,63 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		C01711692B306E1300C18D5E /* Rain */ = {
+			isa = PBXGroup;
+			children = (
+				C01711742B306EA000C18D5E /* rain.mp4 */,
+			);
+			path = Rain;
+			sourceTree = "<group>";
+		};
+		C017116A2B306E2400C18D5E /* RainOvercast */ = {
+			isa = PBXGroup;
+			children = (
+				C01711732B306E9300C18D5E /* rainOvercast.mp4 */,
+			);
+			path = RainOvercast;
+			sourceTree = "<group>";
+		};
+		C017116B2B306E2F00C18D5E /* rainPartiallyCloudy */ = {
+			isa = PBXGroup;
+			children = (
+				C017116F2B306E7500C18D5E /* rainPartiallyCloudy.mp4 */,
+			);
+			path = rainPartiallyCloudy;
+			sourceTree = "<group>";
+		};
+		C017116C2B306E3D00C18D5E /* Snowy */ = {
+			isa = PBXGroup;
+			children = (
+				C01711702B306E7E00C18D5E /* Snowy.mp4 */,
+			);
+			path = Snowy;
+			sourceTree = "<group>";
+		};
+		C017116D2B306E4800C18D5E /* Storm */ = {
+			isa = PBXGroup;
+			children = (
+				C01711712B306E8400C18D5E /* Storm.mp4 */,
+			);
+			path = Storm;
+			sourceTree = "<group>";
+		};
+		C017116E2B306E4D00C18D5E /* Windy */ = {
+			isa = PBXGroup;
+			children = (
+				C01711722B306E8A00C18D5E /* Windy.mp4 */,
+			);
+			path = Windy;
+			sourceTree = "<group>";
+		};
 		C09701DD2B2F5E0800EB8385 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				C017116E2B306E4D00C18D5E /* Windy */,
+				C017116D2B306E4800C18D5E /* Storm */,
+				C017116C2B306E3D00C18D5E /* Snowy */,
+				C017116B2B306E2F00C18D5E /* rainPartiallyCloudy */,
+				C017116A2B306E2400C18D5E /* RainOvercast */,
+				C01711692B306E1300C18D5E /* Rain */,
 				C09701E32B2F6A5900EB8385 /* Night */,
 				C09701E22B2F6A4F00EB8385 /* Evening */,
 				C09701E12B2F6A4700EB8385 /* Afternoon */,
@@ -263,6 +369,11 @@
 		C09701E02B2F6A3D00EB8385 /* Mornings */ = {
 			isa = PBXGroup;
 			children = (
+				C01711772B306EC700C18D5E /* cloudyMorning.mp4 */,
+				C01711782B306EC700C18D5E /* fogMorning.mp4 */,
+				C01711792B306EC700C18D5E /* hazeMorning.mp4 */,
+				C01711762B306EC700C18D5E /* overcastMorning.mp4 */,
+				C01711752B306EB500C18D5E /* dryMorning.mp4 */,
 				C09701E52B2F6BDE00EB8385 /* clearMorning.mp4 */,
 			);
 			path = Mornings;
@@ -271,6 +382,11 @@
 		C09701E12B2F6A4700EB8385 /* Afternoon */ = {
 			isa = PBXGroup;
 			children = (
+				C017117B2B306EFE00C18D5E /* cloudyNoon.mp4 */,
+				C017117D2B306EFE00C18D5E /* fogNoon.mp4 */,
+				C017117E2B306EFF00C18D5E /* hazeNoon.mp4 */,
+				C017117C2B306EFE00C18D5E /* overcastNoon.mp4 */,
+				C017117A2B306EE500C18D5E /* dryNoon.mp4 */,
 				C09701E72B2F7C0500EB8385 /* clearNoon.mp4 */,
 			);
 			path = Afternoon;
@@ -279,6 +395,11 @@
 		C09701E22B2F6A4F00EB8385 /* Evening */ = {
 			isa = PBXGroup;
 			children = (
+				C01711812B306F1900C18D5E /* dryEvening.mp4 */,
+				C01711832B306F1B00C18D5E /* overcastEvening.mp4 */,
+				C01711822B306F1900C18D5E /* fogEvening.mp4 */,
+				C01711802B306F1900C18D5E /* hazeEvening.mp4 */,
+				C017117F2B306F0800C18D5E /* cloudyEvening.mp4 */,
 				C09701E82B2F7C1600EB8385 /* clearEvening.mp4 */,
 			);
 			path = Evening;
@@ -287,6 +408,11 @@
 		C09701E32B2F6A5900EB8385 /* Night */ = {
 			isa = PBXGroup;
 			children = (
+				C01711882B306F3A00C18D5E /* cloudyNight.mp4 */,
+				C01711852B306F3800C18D5E /* dryNight.mp4 */,
+				C01711842B306F3800C18D5E /* fogNight.mp4 */,
+				C01711862B306F3900C18D5E /* hazeNight.mp4 */,
+				C01711872B306F3A00C18D5E /* overcastNight.mp4 */,
 				C09701EF2B2F8D0300EB8385 /* clearNight.mp4 */,
 			);
 			path = Night;
@@ -383,9 +509,35 @@
 				345D2C592A66A3D400FFE6BE /* Poppins-BoldItalic.ttf in Resources */,
 				345D2C5A2A66A3D400FFE6BE /* Poppins-Light.ttf in Resources */,
 				345D2C5E2A66A3D400FFE6BE /* Poppins-ExtraBold.ttf in Resources */,
+				C01711892B306F6A00C18D5E /* Windy.mp4 in Resources */,
+				C017118A2B306F6A00C18D5E /* Storm.mp4 in Resources */,
+				C017118B2B306F6A00C18D5E /* Snowy.mp4 in Resources */,
+				C017118C2B306F6A00C18D5E /* rainPartiallyCloudy.mp4 in Resources */,
+				C017118D2B306F6A00C18D5E /* rainOvercast.mp4 in Resources */,
+				C017118E2B306F6A00C18D5E /* rain.mp4 in Resources */,
+				C017118F2B306F6A00C18D5E /* cloudyNight.mp4 in Resources */,
+				C01711902B306F6A00C18D5E /* dryNight.mp4 in Resources */,
+				C01711912B306F6A00C18D5E /* fogNight.mp4 in Resources */,
+				C01711922B306F6A00C18D5E /* hazeNight.mp4 in Resources */,
+				C01711932B306F6A00C18D5E /* overcastNight.mp4 in Resources */,
 				C09701F02B2F8D0600EB8385 /* clearNight.mp4 in Resources */,
-				C09701E62B2F6BF700EB8385 /* clearMorning.mp4 in Resources */,
+				C01711942B306F6A00C18D5E /* dryEvening.mp4 in Resources */,
+				C01711952B306F6A00C18D5E /* overcastEvening.mp4 in Resources */,
+				C01711962B306F6A00C18D5E /* fogEvening.mp4 in Resources */,
+				C01711972B306F6A00C18D5E /* hazeEvening.mp4 in Resources */,
+				C01711982B306F6A00C18D5E /* cloudyEvening.mp4 in Resources */,
 				C09701EB2B2F7C3D00EB8385 /* clearEvening.mp4 in Resources */,
+				C01711992B306F6A00C18D5E /* cloudyNoon.mp4 in Resources */,
+				C017119A2B306F6A00C18D5E /* fogNoon.mp4 in Resources */,
+				C017119B2B306F6A00C18D5E /* hazeNoon.mp4 in Resources */,
+				C017119C2B306F6A00C18D5E /* overcastNoon.mp4 in Resources */,
+				C017119D2B306F6A00C18D5E /* dryNoon.mp4 in Resources */,
+				C017119E2B306F6A00C18D5E /* cloudyMorning.mp4 in Resources */,
+				C017119F2B306F6A00C18D5E /* fogMorning.mp4 in Resources */,
+				C01711A02B306F6A00C18D5E /* hazeMorning.mp4 in Resources */,
+				C01711A12B306F6A00C18D5E /* overcastMorning.mp4 in Resources */,
+				C01711A22B306F6A00C18D5E /* dryMorning.mp4 in Resources */,
+				C09701E62B2F6BF700EB8385 /* clearMorning.mp4 in Resources */,
 				C09701EC2B2F7C3D00EB8385 /* clearNoon.mp4 in Resources */,
 				345D2C132A667C0700FFE6BE /* LaunchScreen.storyboard in Resources */,
 				345D2C5C2A66A3D400FFE6BE /* Poppins-SemiBoldItalic.ttf in Resources */,

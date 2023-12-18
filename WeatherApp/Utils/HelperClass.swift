@@ -594,29 +594,29 @@ func weatherSymbolImageSet(conditions: Conditions,tintColor: String) -> UIImage{
 func setVideoURLMorning(conditions: Conditions) -> URL{
     var url: URL?
     switch(conditions){
-    case.clear: url = Bundle.main.url(forResource: "clearMorning", withExtension: "mp4")!
+    case .clear: url = Bundle.main.url(forResource: "clearMorning", withExtension: "mp4")!
         break
-    case .overcast:
+    case .overcast: url = Bundle.main.url(forResource: "overcastMorning", withExtension: "mp4")!
         break
-    case .partiallyCloudy:
+    case .partiallyCloudy: url = Bundle.main.url(forResource: "cloudyMorning", withExtension: "mp4")!
         break
-    case .rainOvercast:
+    case .rainOvercast: url = Bundle.main.url(forResource: "rainOvercast", withExtension: "mp4")!
         break
-    case .rainPartiallyCloudy:
+    case .rainPartiallyCloudy: url = Bundle.main.url(forResource: "rainPartiallyCloudy", withExtension: "mp4")!
         break
-    case .rain:
+    case .rain: url = Bundle.main.url(forResource: "rain", withExtension: "mp4")!
         break
-    case .snowy:
+    case .snowy: url = Bundle.main.url(forResource: "Snowy", withExtension: "mp4")!
         break
-    case .storm:
+    case .storm: url = Bundle.main.url(forResource: "Storm", withExtension: "mp4")!
         break
-    case .windy:
+    case .windy: url = Bundle.main.url(forResource: "Windy", withExtension: "mp4")!
         break
-    case .dry:
+    case .dry: url = Bundle.main.url(forResource: "dryMorning", withExtension: "mp4")!
         break
-    case .fog:
+    case .fog: url = Bundle.main.url(forResource: "fogMorning", withExtension: "mp4")!
         break
-    case .haze:
+    case .haze: url = Bundle.main.url(forResource: "hazeMorning", withExtension: "mp4")!
         break
     }
     
@@ -626,29 +626,29 @@ func setVideoURLMorning(conditions: Conditions) -> URL{
 func setVideoURLAfternoon(conditions: Conditions) -> URL{
     var url: URL?
     switch(conditions){
-    case.clear: url = Bundle.main.url(forResource: "clearNoon", withExtension: "mp4")
+    case .clear: url = Bundle.main.url(forResource: "clearNoon", withExtension: "mp4")!
         break
-    case .overcast:
+    case .overcast: url = Bundle.main.url(forResource: "overcastNoon", withExtension: "mp4")!
         break
-    case .partiallyCloudy:
+    case .partiallyCloudy: url = Bundle.main.url(forResource: "cloudyNoon", withExtension: "mp4")!
         break
-    case .rainOvercast:
+    case .rainOvercast: url = Bundle.main.url(forResource: "rainOvercast", withExtension: "mp4")!
         break
-    case .rainPartiallyCloudy:
+    case .rainPartiallyCloudy: url = Bundle.main.url(forResource: "rainPartiallyCloudy", withExtension: "mp4")!
         break
-    case .rain:
+    case .rain: url = Bundle.main.url(forResource: "rain", withExtension: "mp4")!
         break
-    case .snowy:
+    case .snowy: url = Bundle.main.url(forResource: "Snowy", withExtension: "mp4")!
         break
-    case .storm:
+    case .storm: url = Bundle.main.url(forResource: "Storm", withExtension: "mp4")!
         break
-    case .windy:
+    case .windy: url = Bundle.main.url(forResource: "Windy", withExtension: "mp4")!
         break
-    case .dry:
+    case .dry: url = Bundle.main.url(forResource: "dryNoon", withExtension: "mp4")!
         break
-    case .fog:
+    case .fog: url = Bundle.main.url(forResource: "fogNoon", withExtension: "mp4")!
         break
-    case .haze:
+    case .haze: url = Bundle.main.url(forResource: "hazeNoon", withExtension: "mp4")!
         break
     }
     
@@ -658,29 +658,29 @@ func setVideoURLAfternoon(conditions: Conditions) -> URL{
 func setVideoURLEvening(conditions: Conditions) -> URL{
     var url: URL?
     switch(conditions){
-    case.clear: url = Bundle.main.url(forResource: "clearEvening", withExtension: "mp4")
+    case .clear: url = Bundle.main.url(forResource: "clearEvening", withExtension: "mp4")!
         break
-    case .overcast:
+    case .overcast: url = Bundle.main.url(forResource: "overcastEvening", withExtension: "mp4")!
         break
-    case .partiallyCloudy:
+    case .partiallyCloudy: url = Bundle.main.url(forResource: "cloudyEvening", withExtension: "mp4")!
         break
-    case .rainOvercast:
+    case .rainOvercast: url = Bundle.main.url(forResource: "rainOvercast", withExtension: "mp4")!
         break
-    case .rainPartiallyCloudy:
+    case .rainPartiallyCloudy: url = Bundle.main.url(forResource: "rainPartiallyCloudy", withExtension: "mp4")!
         break
-    case .rain:
+    case .rain: url = Bundle.main.url(forResource: "rain", withExtension: "mp4")!
         break
-    case .snowy:
+    case .snowy: url = Bundle.main.url(forResource: "Snowy", withExtension: "mp4")!
         break
-    case .storm:
+    case .storm: url = Bundle.main.url(forResource: "Storm", withExtension: "mp4")!
         break
-    case .windy:
+    case .windy: url = Bundle.main.url(forResource: "Windy", withExtension: "mp4")!
         break
-    case .dry:
+    case .dry: url = Bundle.main.url(forResource: "dryEvening", withExtension: "mp4")!
         break
-    case .fog:
+    case .fog: url = Bundle.main.url(forResource: "fogEvening", withExtension: "mp4")!
         break
-    case .haze:
+    case .haze: url = Bundle.main.url(forResource: "hazeEvening", withExtension: "mp4")!
         break
     }
     
@@ -690,29 +690,29 @@ func setVideoURLEvening(conditions: Conditions) -> URL{
 func setVideoURLNight(conditions: Conditions) -> URL{
     var url: URL?
     switch(conditions){
-    case.clear: url = Bundle.main.url(forResource: "clearNight", withExtension: "mp4")
+    case .clear: url = Bundle.main.url(forResource: "clearNight", withExtension: "mp4")!
         break
-    case .overcast:
+    case .overcast: url = Bundle.main.url(forResource: "overcastNight", withExtension: "mp4")!
         break
-    case .partiallyCloudy:
+    case .partiallyCloudy: url = Bundle.main.url(forResource: "cloudyNight", withExtension: "mp4")!
         break
-    case .rainOvercast:
+    case .rainOvercast: url = Bundle.main.url(forResource: "rainOvercast", withExtension: "mp4")!
         break
-    case .rainPartiallyCloudy:
+    case .rainPartiallyCloudy: url = Bundle.main.url(forResource: "rainPartiallyCloudy", withExtension: "mp4")!
         break
-    case .rain:
+    case .rain: url = Bundle.main.url(forResource: "rain", withExtension: "mp4")!
         break
-    case .snowy:
+    case .snowy: url = Bundle.main.url(forResource: "Snowy", withExtension: "mp4")!
         break
-    case .storm:
+    case .storm: url = Bundle.main.url(forResource: "Storm", withExtension: "mp4")!
         break
-    case .windy:
+    case .windy: url = Bundle.main.url(forResource: "Windy", withExtension: "mp4")!
         break
-    case .dry:
+    case .dry: url = Bundle.main.url(forResource: "dryNight", withExtension: "mp4")!
         break
-    case .fog:
+    case .fog: url = Bundle.main.url(forResource: "fogNight", withExtension: "mp4")!
         break
-    case .haze:
+    case .haze: url = Bundle.main.url(forResource: "hazeNight", withExtension: "mp4")!
         break
     }
     

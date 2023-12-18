@@ -245,7 +245,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
         cell.lblTemp.text = String(cellObj.temp ?? 0.00) + " °C"
         cell.lblLow.text = "Min: " + " " + String(cellObj.tempmin ?? 0.00) + " °C"
         cell.lblHigh.text = "Max: " + " " + String(cellObj.tempmax ?? 0.00) + " °C"
-//        cell.viewShadow()
+        cell.viewShadow()
         return cell
     }
     
