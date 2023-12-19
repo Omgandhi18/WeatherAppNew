@@ -24,8 +24,6 @@
       <li><a href="https://github.com/SVProgressHUD/SVProgressHUD" target="_blank">SVProgressHud</a></li>
     </ul>
     <h2>Photos and Videos</h2>
-    ![simulator_screenshot_80CE301F-8EB1-4AC7-9FE3-B6C7765236B9](https://github.com/Omgandhi18/WeatherAppNew/assets/81526761/4073c3a6-ff19-4df0-8203-cc82179cae2c)
-
     
 <h2>Contributing</h2>
     <p>Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on our <a href="https://github.com/yourusername/ios-weather-app" target="_blank">GitHub repository</a>.</p>
