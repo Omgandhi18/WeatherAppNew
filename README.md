@@ -24,6 +24,7 @@
       <li><a href="https://github.com/SVProgressHUD/SVProgressHUD" target="_blank">SVProgressHud</a></li>
     </ul>
     <h2>Photos and Videos</h2>
-    
+    ![Simulator Screenshot - iPhone 15 Pro Max - 2023-12-19 at 17 31 10](https://github.com/Omgandhi18/WeatherAppNew/assets/81526761/db2adb7a-2a9f-4431-890d-ca32b765fcf3)
+
 <h2>Contributing</h2>
     <p>Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on our <a href="https://github.com/yourusername/ios-weather-app" target="_blank">GitHub repository</a>.</p>
