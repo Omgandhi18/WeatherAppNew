@@ -914,6 +914,7 @@ extension UIColor {
 //    static let office_cellbackground      = UIColor(named: "ecom_cellbackground")     // #5CA0FF 10%
 //    static let office_buttonColor         = UIColor(named: "buttonColor")             // #103961
 //    static let labelColor                 = UIColor(named: "labelColor")              // #165E97
+    static let whiteTransparent = UIColor(named: "white_transparent")
 }
 extension UILabel{
     func addUnderLineToLabel() {

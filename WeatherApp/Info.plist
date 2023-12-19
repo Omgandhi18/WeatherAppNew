@@ -23,6 +23,16 @@
 		<string>Poppins-ExtraBold.ttf</string>
 		<string>Poppins-SemiBold.ttf</string>
 	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Allow access to local network to get/update weather data</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow access to location to get location based weather data.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Allow access to location to get location based weather data.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow access to location to get location based weather data.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Allow access to location to get location based weather data.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

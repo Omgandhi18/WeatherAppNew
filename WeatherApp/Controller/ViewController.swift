@@ -37,6 +37,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
     var hourArray = [CurrentConditions]()
     var player: AVPlayer!
     var avpController  = AVPlayerViewController()
+    var isFromSearch = false
     //MARK: ViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,22 +48,27 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
         mainScrollView.isScrollEnabled = true
         mainScrollView.alwaysBounceVertical = true
         mainScrollView.refreshControl = refreshControl
-        locationManager.requestAlwaysAuthorization()
-               // For use when the app is open
-               //locationManager.requestWhenInUseAuthorization()
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
-        DispatchQueue.global().async {
-            if CLLocationManager.locationServicesEnabled() {
-                self.locationManager.delegate = self
-                self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                self.locationManager.startUpdatingLocation()
+        if !isFromSearch{
+            locationManager.requestAlwaysAuthorization()
+                   // For use when the app is open
+                   //locationManager.requestWhenInUseAuthorization()
+            locationManager.delegate = self
+            locationManager.startUpdatingLocation()
+            DispatchQueue.global().async {
+                if CLLocationManager.locationServicesEnabled() {
+                    self.locationManager.delegate = self
+                    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                    self.locationManager.startUpdatingLocation()
+                }
             }
         }
-        
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        if !isFromSearch{
+            NotificationCenter.default.addObserver(self, selector: #selector(getCity), name: UIApplication.willEnterForegroundNotification, object: UIApplication.shared)
+        }
+        
         clcDailyWeather.makeViewCurve(radius: 10)
         clcHourlyWeather.makeViewCurve(radius: 10)
        
@@ -70,36 +76,44 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
     override func viewDidAppear(_ animated: Bool) {
         getCity()
     }
+    
     override func viewDidLayoutSubviews() {
         
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
     //MARK: WebService methods
-    func getCity(){
-        let location = CLLocation(latitude: latitude, longitude: longitude)
-        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
-                        if error != nil {
-                            return
-                        }else if let country = placemarks?.first?.country,
-                            let city = placemarks?.first?.locality {
-                            self.lblCityCountry.text = city + ", " + country
-                            self.lblCityCountry.textDropShadow()
-                            self.cityName = city
-                           
-                            self.getWeatherData(city: self.cityName)
+    @objc func getCity(){
+        
+        DispatchQueue.main.async {
+            let location = CLLocation(latitude: self.latitude, longitude: self.longitude)
+            CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
+                            if error != nil {
+                                return
+                            }else if let country = placemarks?.first?.country,
+                                let city = placemarks?.first?.locality {
+                                self.lblCityCountry.text = city + ", " + country
+                                self.lblCityCountry.textDropShadow()
+                                self.cityName = city
+                               
+                                self.getWeatherData()
+                            }
+                            else {
+                                self.showToastAlert(strmsg: "Failed to get city data", preferredStyle: .alert)
+                                self.cityName = "Cupertino"
+                                self.getWeatherData()
+                            }
                         }
-                        else {
-                            self.showToastAlert(strmsg: "Failed to get city data", preferredStyle: .alert)
-                            self.cityName = "Cupertino"
-                            self.getWeatherData(city: self.cityName)
-                        }
-                    }
-        )
+            )
+        }
+        
         
       
         
     }
-    func getWeatherData(city: String){
-        let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/\(city)?unitGroup=metric&key=AKGKQKRSW8H2522FCFV3NR74X&contentType=json"
+    @objc func getWeatherData(){
+        let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/\(self.cityName)?unitGroup=metric&key=AKGKQKRSW8H2522FCFV3NR74X&contentType=json"
             CallService(Model_Name: ResponseModelData.self, URLstr: url,method: HTTPMethodName.GET.rawValue){[self]response in
                 responseModel = response
                 dayArray = response.days ?? []
@@ -203,10 +217,13 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
     }
     //MARK: Location manager delegates
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-          if let location = locations.first {
-              latitude = location.coordinate.latitude
-              longitude = location.coordinate.longitude
-          }
+        if !isFromSearch{
+            if let location = locations.first {
+                latitude = location.coordinate.latitude
+                longitude = location.coordinate.longitude
+            }
+        }
+          
       }
       func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
           if (status == CLAuthorizationStatus.denied){
@@ -215,6 +232,9 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
                                   UIApplication.shared.open(url, options: [:], completionHandler: nil)
                               }
               }
+          }
+          else{
+              getCity()
           }
       }
     //MARK: CollectonView methods
@@ -228,7 +248,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
         
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/3, height: 150)
+        return CGSize(width: collectionView.frame.width/3 + 40, height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -237,14 +257,17 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
         var cellObj = CurrentConditions()
         if collectionView == clcDailyWeather{
             cellObj = dayArray[indexPath.row]
+            cell.lblLow.text = "Min: " + " " + String(cellObj.tempmin ?? 0.00) + " °C"
+            cell.lblHigh.text = "Max: " + " " + String(cellObj.tempmax ?? 0.00) + " °C"
         }
         else{
             cellObj = hourArray[indexPath.row]
+            cell.lblLow.text = ""
+            cell.lblHigh.text = ""
         }
         cell.lblDate.text = cellObj.datetime ?? ""
         cell.lblTemp.text = String(cellObj.temp ?? 0.00) + " °C"
-        cell.lblLow.text = "Min: " + " " + String(cellObj.tempmin ?? 0.00) + " °C"
-        cell.lblHigh.text = "Max: " + " " + String(cellObj.tempmax ?? 0.00) + " °C"
+        
         cell.viewShadow()
         return cell
     }

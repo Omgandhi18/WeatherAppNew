@@ -12,8 +12,9 @@ import SVProgressHUD
 class Settings: NSObject {
     func showProgress()
     {
-        SVProgressHUD.setBackgroundColor(UIColor(named: "background")!)
-        SVProgressHUD.setForegroundColor(UIColor(named: "MaroonColor")!)
+        
+        SVProgressHUD.setBackgroundColor(UIColor(named: "transparent")!)
+        SVProgressHUD.setForegroundColor(UIColor(named: "BlueColor")!)
         SVProgressHUD.setRingThickness(3.0)
         SVProgressHUD.show()
         SVProgressHUD .setDefaultMaskType(SVProgressHUDMaskType.black)
@@ -21,8 +22,8 @@ class Settings: NSObject {
 
     func showProgressWithStatus(_ status: String)
     {
-        SVProgressHUD.setBackgroundColor(UIColor(named: "background")!)
-        SVProgressHUD.setForegroundColor(UIColor(named: "MaroonColor")!)
+        SVProgressHUD.setBackgroundColor(UIColor(named: "transparent")!)
+        SVProgressHUD.setForegroundColor(UIColor(named: "BlueColor")!)
         SVProgressHUD.setRingThickness(3.0)
         SVProgressHUD.show(withStatus: status)
         SVProgressHUD .setDefaultMaskType(SVProgressHUDMaskType.black)

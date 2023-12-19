@@ -42,7 +42,6 @@
 		345D2C692A66CECD00FFE6BE /* DayWiseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2C682A66CECD00FFE6BE /* DayWiseCell.swift */; };
 		34F5ADED2A67B99500E2AFBD /* MyTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5ADEC2A67B99500E2AFBD /* MyTabController.swift */; };
 		34F5ADF52A67C2BB00E2AFBD /* TwoWeekTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5ADF42A67C2BB00E2AFBD /* TwoWeekTableCell.swift */; };
-		34F5ADF72A67C47000E2AFBD /* TwoWeekDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5ADF62A67C47000E2AFBD /* TwoWeekDataVC.swift */; };
 		34F5ADF92A67E48600E2AFBD /* SearchPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F5ADF82A67E48600E2AFBD /* SearchPlaceVC.swift */; };
 		92BDAAC298B714A39C6E4F63 /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326D8C36FA272514EC5C8423 /* Pods_WeatherApp.framework */; };
 		C01711892B306F6A00C18D5E /* Windy.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711722B306E8A00C18D5E /* Windy.mp4 */; };
@@ -71,6 +70,10 @@
 		C01711A02B306F6A00C18D5E /* hazeMorning.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711792B306EC700C18D5E /* hazeMorning.mp4 */; };
 		C01711A12B306F6A00C18D5E /* overcastMorning.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711762B306EC700C18D5E /* overcastMorning.mp4 */; };
 		C01711A22B306F6A00C18D5E /* dryMorning.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C01711752B306EB500C18D5E /* dryMorning.mp4 */; };
+		C026763E2B31445A00924422 /* StartupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C026763D2B31445A00924422 /* StartupScreen.swift */; };
+		C02676462B31590900924422 /* AnimatedLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = C02676452B31590900924422 /* AnimatedLogo.gif */; };
+		C026764D2B31928D00924422 /* Logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = C026764B2B31928D00924422 /* Logo.gif */; };
+		C026764E2B31928D00924422 /* LogoDark.gif in Resources */ = {isa = PBXBuildFile; fileRef = C026764C2B31928D00924422 /* LogoDark.gif */; };
 		C09701E62B2F6BF700EB8385 /* clearMorning.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C09701E52B2F6BDE00EB8385 /* clearMorning.mp4 */; };
 		C09701EB2B2F7C3D00EB8385 /* clearEvening.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C09701E82B2F7C1600EB8385 /* clearEvening.mp4 */; };
 		C09701EC2B2F7C3D00EB8385 /* clearNoon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C09701E72B2F7C0500EB8385 /* clearNoon.mp4 */; };
@@ -131,7 +134,6 @@
 		345D2C712A66E42200FFE6BE /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		34F5ADEC2A67B99500E2AFBD /* MyTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabController.swift; sourceTree = "<group>"; };
 		34F5ADF42A67C2BB00E2AFBD /* TwoWeekTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoWeekTableCell.swift; sourceTree = "<group>"; };
-		34F5ADF62A67C47000E2AFBD /* TwoWeekDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoWeekDataVC.swift; sourceTree = "<group>"; };
 		34F5ADF82A67E48600E2AFBD /* SearchPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceVC.swift; sourceTree = "<group>"; };
 		46406723D65D019FC0AC7624 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C017116F2B306E7500C18D5E /* rainPartiallyCloudy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rainPartiallyCloudy.mp4; sourceTree = "<group>"; };
@@ -160,6 +162,10 @@
 		C01711862B306F3900C18D5E /* hazeNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hazeNight.mp4; sourceTree = "<group>"; };
 		C01711872B306F3A00C18D5E /* overcastNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = overcastNight.mp4; sourceTree = "<group>"; };
 		C01711882B306F3A00C18D5E /* cloudyNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cloudyNight.mp4; sourceTree = "<group>"; };
+		C026763D2B31445A00924422 /* StartupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupScreen.swift; sourceTree = "<group>"; };
+		C02676452B31590900924422 /* AnimatedLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = AnimatedLogo.gif; sourceTree = "<group>"; };
+		C026764B2B31928D00924422 /* Logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Logo.gif; sourceTree = "<group>"; };
+		C026764C2B31928D00924422 /* LogoDark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LogoDark.gif; sourceTree = "<group>"; };
 		C09701DE2B2F5E1500EB8385 /* Beach.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Beach.mp4; path = "../../../../Weather videos/Beach.mp4"; sourceTree = "<group>"; };
 		C09701E52B2F6BDE00EB8385 /* clearMorning.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = clearMorning.mp4; sourceTree = "<group>"; };
 		C09701E72B2F7C0500EB8385 /* clearNoon.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = clearNoon.mp4; sourceTree = "<group>"; };
@@ -282,8 +288,8 @@
 			children = (
 				345D2C0A2A667C0500FFE6BE /* ViewController.swift */,
 				34F5ADEC2A67B99500E2AFBD /* MyTabController.swift */,
-				34F5ADF62A67C47000E2AFBD /* TwoWeekDataVC.swift */,
 				34F5ADF82A67E48600E2AFBD /* SearchPlaceVC.swift */,
+				C026763D2B31445A00924422 /* StartupScreen.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -351,6 +357,9 @@
 		C09701DD2B2F5E0800EB8385 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				C02676452B31590900924422 /* AnimatedLogo.gif */,
+				C026764B2B31928D00924422 /* Logo.gif */,
+				C026764C2B31928D00924422 /* LogoDark.gif */,
 				C017116E2B306E4D00C18D5E /* Windy */,
 				C017116D2B306E4800C18D5E /* Storm */,
 				C017116C2B306E3D00C18D5E /* Snowy */,
@@ -505,6 +514,7 @@
 				345D2C5F2A66A3D400FFE6BE /* Poppins-BlackItalic.ttf in Resources */,
 				345D2C652A66A3D400FFE6BE /* Poppins-SemiBold.ttf in Resources */,
 				345D2C622A66A3D400FFE6BE /* Poppins-Bold.ttf in Resources */,
+				C026764E2B31928D00924422 /* LogoDark.gif in Resources */,
 				345D2C562A66A3D400FFE6BE /* Poppins-ExtraLight.ttf in Resources */,
 				345D2C592A66A3D400FFE6BE /* Poppins-BoldItalic.ttf in Resources */,
 				345D2C5A2A66A3D400FFE6BE /* Poppins-Light.ttf in Resources */,
@@ -519,6 +529,7 @@
 				C01711902B306F6A00C18D5E /* dryNight.mp4 in Resources */,
 				C01711912B306F6A00C18D5E /* fogNight.mp4 in Resources */,
 				C01711922B306F6A00C18D5E /* hazeNight.mp4 in Resources */,
+				C026764D2B31928D00924422 /* Logo.gif in Resources */,
 				C01711932B306F6A00C18D5E /* overcastNight.mp4 in Resources */,
 				C09701F02B2F8D0600EB8385 /* clearNight.mp4 in Resources */,
 				C01711942B306F6A00C18D5E /* dryEvening.mp4 in Resources */,
@@ -539,6 +550,7 @@
 				C01711A22B306F6A00C18D5E /* dryMorning.mp4 in Resources */,
 				C09701E62B2F6BF700EB8385 /* clearMorning.mp4 in Resources */,
 				C09701EC2B2F7C3D00EB8385 /* clearNoon.mp4 in Resources */,
+				C02676462B31590900924422 /* AnimatedLogo.gif in Resources */,
 				345D2C132A667C0700FFE6BE /* LaunchScreen.storyboard in Resources */,
 				345D2C5C2A66A3D400FFE6BE /* Poppins-SemiBoldItalic.ttf in Resources */,
 				345D2C5D2A66A3D400FFE6BE /* Poppins-ExtraBoldItalic.ttf in Resources */,
@@ -606,6 +618,7 @@
 				34F5ADF92A67E48600E2AFBD /* SearchPlaceVC.swift in Sources */,
 				345D2C232A667D5B00FFE6BE /* WebService.swift in Sources */,
 				345D2C072A667C0500FFE6BE /* AppDelegate.swift in Sources */,
+				C026763E2B31445A00924422 /* StartupScreen.swift in Sources */,
 				345D2C1F2A667CF600FFE6BE /* AlertVC.swift in Sources */,
 				345D2C212A667D3900FFE6BE /* Settings.swift in Sources */,
 				345D2C692A66CECD00FFE6BE /* DayWiseCell.swift in Sources */,
@@ -616,7 +629,6 @@
 				34F5ADF52A67C2BB00E2AFBD /* TwoWeekTableCell.swift in Sources */,
 				345D2C272A6686BC00FFE6BE /* ResponseModel.swift in Sources */,
 				345D2C252A667DA300FFE6BE /* ApiUrl.swift in Sources */,
-				34F5ADF72A67C47000E2AFBD /* TwoWeekDataVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,6 +779,7 @@
 				DEVELOPMENT_TEAM = 659TVY4N4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "OG Weather";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow access to your location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Please allow access to your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow access to your location";
@@ -799,6 +812,7 @@
 				DEVELOPMENT_TEAM = 659TVY4N4U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "OG Weather";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow access to your location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Please allow access to your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow access to your location";
