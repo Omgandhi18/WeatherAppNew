@@ -255,17 +255,45 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DayWiseCell", for: indexPath) as! DayWiseCell
 //        cell.layer.cornerRadius = 15
         var cellObj = CurrentConditions()
+        var dateTime = ""
         if collectionView == clcDailyWeather{
+            
             cellObj = dayArray[indexPath.row]
+            let dateFormatterGet = DateFormatter()
+            dateFormatterGet.dateFormat = "yyyy-MM-dd"
+
+            let dateFormatterPrint = DateFormatter()
+            dateFormatterPrint.dateFormat = "dd MMM"
+
+            if let date = dateFormatterGet.date(from: cellObj.datetime ?? "") {
+                dateTime = dateFormatterPrint.string(from: date)
+                print(dateFormatterPrint.string(from: date))
+            } else {
+               print("There was an error decoding the string")
+            }
             cell.lblLow.text = "Min: " + " " + String(cellObj.tempmin ?? 0.00) + " °C"
             cell.lblHigh.text = "Max: " + " " + String(cellObj.tempmax ?? 0.00) + " °C"
+            cell.lblDate.text = dateTime
         }
         else{
             cellObj = hourArray[indexPath.row]
+            let dateFormatterGet = DateFormatter()
+            dateFormatterGet.dateFormat = "HH:mm:ss"
+
+            let dateFormatterPrint = DateFormatter()
+            dateFormatterPrint.dateFormat = "hh a"
+
+            if let date = dateFormatterGet.date(from: cellObj.datetime ?? "") {
+                dateTime = dateFormatterPrint.string(from: date)
+                print(dateFormatterPrint.string(from: date))
+            } else {
+               print("There was an error decoding the string")
+            }
             cell.lblLow.text = ""
             cell.lblHigh.text = ""
+            cell.lblDate.text = dateTime
         }
-        cell.lblDate.text = cellObj.datetime ?? ""
+        
         cell.lblTemp.text = String(cellObj.temp ?? 0.00) + " °C"
         
         cell.viewShadow()
