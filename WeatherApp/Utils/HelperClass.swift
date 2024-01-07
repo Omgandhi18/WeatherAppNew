@@ -618,6 +618,8 @@ func setVideoURLMorning(conditions: Conditions) -> URL{
         break
     case .haze: url = Bundle.main.url(forResource: "hazeMorning", withExtension: "mp4")!
         break
+    case .snowRainOvercast: url =  Bundle.main.url(forResource: "Snowy", withExtension: "mp4")!
+        break
     }
     
     return url ?? URL(string: "https://youtu.be/1VMI7nffU-Q")!
@@ -650,6 +652,9 @@ func setVideoURLAfternoon(conditions: Conditions) -> URL{
         break
     case .haze: url = Bundle.main.url(forResource: "hazeNoon", withExtension: "mp4")!
         break
+    case .snowRainOvercast:
+        url =  Bundle.main.url(forResource: "Snowy", withExtension: "mp4")!
+            break
     }
     
     return url ?? URL(string: "https://youtu.be/1VMI7nffU-Q")!
@@ -682,6 +687,8 @@ func setVideoURLEvening(conditions: Conditions) -> URL{
         break
     case .haze: url = Bundle.main.url(forResource: "hazeEvening", withExtension: "mp4")!
         break
+    case .snowRainOvercast: url =  Bundle.main.url(forResource: "Snowy", withExtension: "mp4")!
+            break
     }
     
     return url ?? URL(string: "https://youtu.be/1VMI7nffU-Q")!
@@ -714,6 +721,9 @@ func setVideoURLNight(conditions: Conditions) -> URL{
         break
     case .haze: url = Bundle.main.url(forResource: "hazeNight", withExtension: "mp4")!
         break
+    case .snowRainOvercast:
+        url =  Bundle.main.url(forResource: "Snowy", withExtension: "mp4")!
+            break
     }
     
     return url ?? URL(string: "https://youtu.be/1VMI7nffU-Q")!

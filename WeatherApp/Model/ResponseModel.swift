@@ -7,7 +7,7 @@
 
 import Foundation
 struct ResponseModelData: Codable{
-    var queryCost: Int?
+    var queryCost: Double?
     var latitude, longitude: Double?
     var resolvedAddress, address, timezone: String?
     var tzoffset: Double?
@@ -20,26 +20,26 @@ struct ResponseModelData: Codable{
 // MARK: - CurrentConditions
 struct CurrentConditions: Codable {
     var datetime: String?
-    var datetimeEpoch: Int?
+    var datetimeEpoch: Double?
     var temp, feelslike, humidity, dew: Double?
     var precip, precipprob: Double?
-    var snow, snowdepth: Int?
+    var snow, snowdepth: Double?
     var preciptype: [String]?
     var windgust: Double?
     var windspeed, winddir, pressure, visibility: Double?
     var cloudcover, solarradiation, solarenergy: Double?
-    var uvindex: Int?
+    var uvindex: Double?
     var conditions: Conditions?
     var icon: String?
     var stations: [String]?
     var source: Source?
     var sunrise: String?
-    var sunriseEpoch: Int?
+    var sunriseEpoch: Double?
     var sunset: String?
-    var sunsetEpoch: Int?
+    var sunsetEpoch: Double?
     var moonphase, tempmax, tempmin, feelslikemax: Double?
     var feelslikemin, precipcover: Double?
-    var severerisk: Int?
+    var severerisk: Double?
     var description: String?
     var hours: [CurrentConditions]?
 }
@@ -50,6 +50,7 @@ enum Conditions: String, Codable {
     case partiallyCloudy = "Partially cloudy"
     case rainOvercast = "Rain, Overcast"
     case rainPartiallyCloudy = "Rain, Partially cloudy"
+    case snowRainOvercast = "Snow, Rain, Overcast"
     case rain = "Rain"
     case snowy = "Snow"
     case storm = "Storm"
@@ -78,10 +79,10 @@ enum Source: String, Codable {
 
 // MARK: - Station
 struct Station: Codable {
-    var distance: Int?
+    var distance: Double?
     var latitude, longitude: Double?
-    var useCount: Int?
+    var useCount: Double?
     var id: String?
     var name: String?
-    var quality, contribution: Int?
+    var quality, contribution: Double?
 }
