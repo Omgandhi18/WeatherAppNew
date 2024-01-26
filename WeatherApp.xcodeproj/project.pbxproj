@@ -171,6 +171,8 @@
 		C09701E72B2F7C0500EB8385 /* clearNoon.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = clearNoon.mp4; sourceTree = "<group>"; };
 		C09701E82B2F7C1600EB8385 /* clearEvening.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = clearEvening.mp4; sourceTree = "<group>"; };
 		C09701EF2B2F8D0300EB8385 /* clearNight.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = clearNight.mp4; sourceTree = "<group>"; };
+		C0A197872B63AFBE00BD08D8 /* snowRainPartiallyCloudy.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = snowRainPartiallyCloudy.mp4; sourceTree = "<group>"; };
+		C0A197892B63B17800BD08D8 /* snowOvercast.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = snowOvercast.mp4; sourceTree = "<group>"; };
 		C4B24E6493128D9A1205AE95 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -360,6 +362,8 @@
 				C02676452B31590900924422 /* AnimatedLogo.gif */,
 				C026764B2B31928D00924422 /* Logo.gif */,
 				C026764C2B31928D00924422 /* LogoDark.gif */,
+				C0A197862B63AFA600BD08D8 /* snowRainPartiallyCloudy */,
+				C0A197882B63B16700BD08D8 /* snowOvercast */,
 				C017116E2B306E4D00C18D5E /* Windy */,
 				C017116D2B306E4800C18D5E /* Storm */,
 				C017116C2B306E3D00C18D5E /* Snowy */,
@@ -425,6 +429,22 @@
 				C09701EF2B2F8D0300EB8385 /* clearNight.mp4 */,
 			);
 			path = Night;
+			sourceTree = "<group>";
+		};
+		C0A197862B63AFA600BD08D8 /* snowRainPartiallyCloudy */ = {
+			isa = PBXGroup;
+			children = (
+				C0A197872B63AFBE00BD08D8 /* snowRainPartiallyCloudy.mp4 */,
+			);
+			name = snowRainPartiallyCloudy;
+			sourceTree = "<group>";
+		};
+		C0A197882B63B16700BD08D8 /* snowOvercast */ = {
+			isa = PBXGroup;
+			children = (
+				C0A197892B63B17800BD08D8 /* snowOvercast.mp4 */,
+			);
+			name = snowOvercast;
 			sourceTree = "<group>";
 		};
 		CED5733B7C6E0FBCB089994D /* Pods */ = {
