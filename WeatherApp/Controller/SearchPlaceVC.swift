@@ -37,17 +37,17 @@ class SearchPlaceVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UI
     }
     
 
-    func getWeatherData(city: String){
-        let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/\(city)?unitGroup=metric&key=AKGKQKRSW8H2522FCFV3NR74X&contentType=json"
-            CallService(Model_Name: ResponseModelData.self, URLstr: url,method: HTTPMethodName.GET.rawValue){[self] response in
-                
-                
-            }OnFail: {[self] err in
-                showAlert(message: err, inViewController: self, forCancel: "", forOther: "Ok", isSingle: true){btn in
-                    
-                }
-            }
-    }
+//    func getWeatherData(city: String){
+//        let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/\(city)?unitGroup=metric&key=AKGKQKRSW8H2522FCFV3NR74X&contentType=json"
+//            CallService(Model_Name: ResponseModelData.self, URLstr: url,method: HTTPMethodName.GET.rawValue){[self] response in
+//                
+//                
+//            }OnFail: {[self] err in
+//                showAlert(message: err, inViewController: self, forCancel: "", forOther: "Ok", isSingle: true){btn in
+//                    
+//                }
+//            }
+//    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResults.count
     }
