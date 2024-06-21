@@ -968,7 +968,7 @@ extension UILabel{
             self.layer.masksToBounds = false
             self.layer.shadowRadius = 5.0
             self.layer.shadowOpacity = 0.4
-            self.layer.shadowOffset = CGSize(width: 1, height: 2)
+            self.layer.shadowOffset = CGSize(width: 4, height: 4)
         }
 }
 extension UITextField {
