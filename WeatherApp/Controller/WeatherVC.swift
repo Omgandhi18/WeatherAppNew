@@ -41,7 +41,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        refreshControl.tintColor = UIColor(named: "MaroonColor")
+        refreshControl.tintColor = UIColor(named: "LightBlueColor")
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
@@ -63,6 +63,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
         let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(pinchGesture))
         weatherIconView.addGestureRecognizer(pinchRecognizer)
         btnCurrentLocation.isHidden = true
+        
         // Do any additional setup after loading the view.
         
     }
@@ -70,10 +71,12 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
        
     }
     override func viewDidAppear(_ animated: Bool) {
-        getCity(latitude: self.latitude, longitude: self.longitude)
+        if let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String{
+            getCity(api_key: apiKey, latitude: self.latitude, longitude: self.longitude)
+        }
     }
     
-    @objc func getCity(latitude: Double, longitude: Double){
+    @objc func getCity(api_key: String,latitude: Double, longitude: Double){
         
         DispatchQueue.main.async {
             let location = CLLocation(latitude: latitude, longitude: longitude)
@@ -86,13 +89,13 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
                                 
                                 self.cityName = city
                                
-                                self.getWeatherData()
+                                self.getWeatherData(api_key: api_key)
                             }
                             else {
 //                                self.showToastAlert(strmsg: "Failed to get city data", preferredStyle: .alert)
                                 self.cityName = "Cupertino"
                                 self.lblCityCountry.text = "Cupertino, United States"
-                                self.getWeatherData()
+                                self.getWeatherData(api_key: api_key)
                             }
                         }
             )
@@ -102,8 +105,8 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
       
         
     }
-    @objc func getWeatherData(){
-        let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/\(self.cityName)?unitGroup=metric&key=AKGKQKRSW8H2522FCFV3NR74X&contentType=json"
+    @objc func getWeatherData(api_key: String){
+        let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/\(self.cityName)?unitGroup=metric&key=\(api_key)&contentType=json"
             CallService(Model_Name: ResponseModelData.self, URLstr: url,method: HTTPMethodName.GET.rawValue){[self]response in
                 responseModel = response
                 dayArray = response.days ?? []
@@ -361,11 +364,15 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
     func sendDataToVC(coordinate: CLLocationCoordinate2D) {
         latitude = coordinate.latitude
         longitude = coordinate.longitude
-        getCity(latitude: latitude, longitude: longitude)
+        if let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String{
+            getCity(api_key: apiKey, latitude: self.latitude, longitude: self.longitude)
+        }
         btnCurrentLocation.isHidden = false
     }
     @objc func refresh(_ sender: UIRefreshControl){
-        getCity(latitude: latitude, longitude: longitude)
+        if let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String{
+            getCity(api_key: apiKey, latitude: self.latitude, longitude: self.longitude)
+        }
         refreshControl.endRefreshing()
     }
     @objc func pinchGesture(_ sender: UIPinchGestureRecognizer) {
@@ -566,7 +573,9 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
     @IBAction func btnCurrentLocation(_ sender: Any) {
         latitude = locationManager.location?.coordinate.latitude ?? 0
         longitude = locationManager.location?.coordinate.longitude ?? 0
-        getCity(latitude: latitude, longitude: longitude)
+        if let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String{
+            getCity(api_key: apiKey, latitude: self.latitude, longitude: self.longitude)
+        }
         btnCurrentLocation.isHidden = true
     }
 }

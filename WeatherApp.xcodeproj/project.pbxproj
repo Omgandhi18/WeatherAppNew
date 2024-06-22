@@ -13,7 +13,6 @@
 		345D2C0E2A667C0500FFE6BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345D2C0C2A667C0500FFE6BE /* Main.storyboard */; };
 		345D2C102A667C0700FFE6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345D2C0F2A667C0700FFE6BE /* Assets.xcassets */; };
 		345D2C132A667C0700FFE6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345D2C112A667C0700FFE6BE /* LaunchScreen.storyboard */; };
-		345D2C1B2A667C6D00FFE6BE /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2C1A2A667C6D00FFE6BE /* DatePickerVC.swift */; };
 		345D2C1D2A667C9500FFE6BE /* HelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2C1C2A667C9500FFE6BE /* HelperClass.swift */; };
 		345D2C1F2A667CF600FFE6BE /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2C1E2A667CF600FFE6BE /* AlertVC.swift */; };
 		345D2C212A667D3900FFE6BE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D2C202A667D3900FFE6BE /* Settings.swift */; };
@@ -121,7 +120,6 @@
 		345D2C0F2A667C0700FFE6BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		345D2C122A667C0700FFE6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		345D2C142A667C0700FFE6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		345D2C1A2A667C6D00FFE6BE /* DatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
 		345D2C1C2A667C9500FFE6BE /* HelperClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperClass.swift; sourceTree = "<group>"; };
 		345D2C1E2A667CF600FFE6BE /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		345D2C202A667D3900FFE6BE /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -307,7 +305,6 @@
 		34F5ADF02A67C25500E2AFBD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				345D2C1A2A667C6D00FFE6BE /* DatePickerVC.swift */,
 				345D2C1C2A667C9500FFE6BE /* HelperClass.swift */,
 				345D2C1E2A667CF600FFE6BE /* AlertVC.swift */,
 				345D2C202A667D3900FFE6BE /* Settings.swift */,
@@ -724,7 +721,6 @@
 				345D2C1F2A667CF600FFE6BE /* AlertVC.swift in Sources */,
 				345D2C212A667D3900FFE6BE /* Settings.swift in Sources */,
 				345D2C692A66CECD00FFE6BE /* DayWiseCell.swift in Sources */,
-				345D2C1B2A667C6D00FFE6BE /* DatePickerVC.swift in Sources */,
 				345D2C092A667C0500FFE6BE /* SceneDelegate.swift in Sources */,
 				345D2C552A66A3D400FFE6BE /* Fonts.swift in Sources */,
 				34F5ADED2A67B99500E2AFBD /* MyTabController.swift in Sources */,
@@ -758,6 +754,7 @@
 /* Begin XCBuildConfiguration section */
 		345D2C152A667C0700FFE6BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C04EE00A2C26E18500DFAD7D /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -818,6 +815,7 @@
 		};
 		345D2C162A667C0700FFE6BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C04EE00A2C26E18500DFAD7D /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

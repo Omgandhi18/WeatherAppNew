@@ -68,7 +68,7 @@ class StartupScreen: UIViewController,CLLocationManagerDelegate{
         if locationEnabled{
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 // your code here
-                let vc = self.storyboard?.instantiateViewController(identifier: "TabBarStory") as! MyTabController
+                let vc = self.storyboard?.instantiateViewController(identifier: "weatherStory") as! WeatherVC
                 UIApplication.shared.windows.first?.rootViewController = vc
                 UIApplication.shared.windows.first?.makeKeyAndVisible()
             }

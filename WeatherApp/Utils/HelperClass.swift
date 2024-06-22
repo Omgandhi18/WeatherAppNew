@@ -2,7 +2,7 @@
 //  HelperClass.swift
 //  WeatherApp
 //
-//  Created by Athulya Tech on 7/18/23.
+//
 //
 
 import Foundation
@@ -220,29 +220,29 @@ extension UIViewController: UIPopoverPresentationControllerDelegate,MFMailCompos
     
     // MARK: - DROPDOWN DATEPICKER POPUP
     func ShowDatePicker(on sender: UIView?, arrowDirection direction: UIPopoverArrowDirection, title titletext: String? = "DateTime",DateTime showDateTime: String? = "",minDate minimumDate:Date?=Date(),maxDate maximumDate:Date?=Date(),NoOfDays noOfDays:Int?=0,isTime isTimePicker:Bool?=false ,completion: @escaping (_ btnString: String?) -> Void) {
-            let Story = UIStoryboard(name: "Main", bundle: nil)
-            let myVC = Story.instantiateViewController(withIdentifier: "popup") as? DatePickerVC
-            myVC?.modalPresentationStyle = .popover
-            myVC?.preferredContentSize   = CGSizeMake(280, 400)
-            myVC?.titleLabel = titletext ?? "DateTime"
-            myVC?.showDateTime = showDateTime ?? ""
-            myVC?.minDate=minimumDate ?? Date()
-            myVC?.noOfDays=noOfDays ?? 0
-            myVC?.maxDate=maximumDate ?? Date()
-            myVC?.isTimePicker=isTimePicker ?? false
-            let popoverVC = myVC?.popoverPresentationController
-            popoverVC?.permittedArrowDirections = direction
-            popoverVC?.sourceView = sender
-            popoverVC?.sourceRect = CGRectMake((sender?.frame.width ?? 0) / 2, sender?.frame.height ?? 0,0,0)
-            popoverVC?.delegate=self
-            if let myVC = myVC {
-                present(myVC, animated: true)
-            }
-    
-            myVC?.onCompletionDone = { dictSelected in
-                completion(dictSelected)
-                self.dismiss(animated: true)
-            }
+//            let Story = UIStoryboard(name: "Main", bundle: nil)
+//            let myVC = Story.instantiateViewController(withIdentifier: "popup") as? DatePickerVC
+//            myVC?.modalPresentationStyle = .popover
+//            myVC?.preferredContentSize   = CGSizeMake(280, 400)
+//            myVC?.titleLabel = titletext ?? "DateTime"
+//            myVC?.showDateTime = showDateTime ?? ""
+//            myVC?.minDate=minimumDate ?? Date()
+//            myVC?.noOfDays=noOfDays ?? 0
+//            myVC?.maxDate=maximumDate ?? Date()
+//            myVC?.isTimePicker=isTimePicker ?? false
+//            let popoverVC = myVC?.popoverPresentationController
+//            popoverVC?.permittedArrowDirections = direction
+//            popoverVC?.sourceView = sender
+//            popoverVC?.sourceRect = CGRectMake((sender?.frame.width ?? 0) / 2, sender?.frame.height ?? 0,0,0)
+//            popoverVC?.delegate=self
+//            if let myVC = myVC {
+//                present(myVC, animated: true)
+//            }
+//    
+//            myVC?.onCompletionDone = { dictSelected in
+//                completion(dictSelected)
+//                self.dismiss(animated: true)
+//            }
         }
     public func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
