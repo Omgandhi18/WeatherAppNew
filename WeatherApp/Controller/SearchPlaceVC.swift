@@ -2,7 +2,7 @@
 //  SearchPlaceVC.swift
 //  WeatherApp
 //
-//  Created by Athulya Tech on 7/19/23.
+// 
 //
 
 import UIKit
@@ -38,19 +38,6 @@ class SearchPlaceVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UI
         }
         txtSearch.resignFirstResponder()
     }
-    
-
-//    func getWeatherData(city: String){
-//        let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/\(city)?unitGroup=metric&key=AKGKQKRSW8H2522FCFV3NR74X&contentType=json"
-//            CallService(Model_Name: ResponseModelData.self, URLstr: url,method: HTTPMethodName.GET.rawValue){[self] response in
-//                
-//                
-//            }OnFail: {[self] err in
-//                showAlert(message: err, inViewController: self, forCancel: "", forOther: "Ok", isSingle: true){btn in
-//                    
-//                }
-//            }
-//    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResults.count
     }
@@ -98,9 +85,6 @@ class SearchPlaceVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UI
         return true
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        if txtSearch.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false {
-//            getWeatherData(city: txtSearch.text ?? "")
-//        }
         if textField.text?.count ?? 0 < 1{
             searchResults = []
             tblSearchResults.reloadData()

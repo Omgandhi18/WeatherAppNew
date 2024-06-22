@@ -2,7 +2,6 @@
 //  AlertVC.swift
 //  WeatherApp
 //
-//  Created by Athulya Tech on 7/18/23.
 //
 
 import UIKit
@@ -44,7 +43,7 @@ class AlertVC: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
 
         // For Transference Background
-        self.view.backgroundColor = .transparent
+        self.view.backgroundColor = .clear
         
         // SET FONT
       
