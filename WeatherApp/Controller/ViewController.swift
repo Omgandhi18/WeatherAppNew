@@ -65,23 +65,23 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        if !isFromSearch{
-            NotificationCenter.default.addObserver(self, selector: #selector(getCity), name: UIApplication.willEnterForegroundNotification, object: UIApplication.shared)
-        }
+//        if !isFromSearch{
+//            NotificationCenter.default.addObserver(self, selector: #selector(getCity), name: UIApplication.willEnterForegroundNotification, object: UIApplication.shared)
+//        }
         
         clcDailyWeather.makeViewCurve(radius: 10)
         clcHourlyWeather.makeViewCurve(radius: 10)
        
     }
     override func viewDidAppear(_ animated: Bool) {
-        getCity()
+//        getCity()
     }
     
     override func viewDidLayoutSubviews() {
         
     }
     override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self)
+//        NotificationCenter.default.removeObserver(self)
     }
     //MARK: WebService methods
     @objc func getCity(){
@@ -206,13 +206,13 @@ class ViewController: UIViewController,CLLocationManagerDelegate,UICollectionVie
     }
     
     func loopVideo(videoPlayer: AVPlayer){
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil){notification in
-            videoPlayer.seek(to: CMTime.zero)
-            videoPlayer.play()
-        }
+//        NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil, queue: nil){notification in
+//            videoPlayer.seek(to: CMTime.zero)
+//            videoPlayer.play()
+//        }
     }
     @objc func refresh(_ sender: UIRefreshControl){
-        getCity()
+//        getCity()
         refreshControl.endRefreshing()
     }
     //MARK: Location manager delegates

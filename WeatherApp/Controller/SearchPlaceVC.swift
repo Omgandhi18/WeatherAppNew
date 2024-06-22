@@ -7,6 +7,9 @@
 
 import UIKit
 import MapKit
+protocol sendData{
+    func sendDataToVC(coordinate: CLLocationCoordinate2D)
+}
 class SearchPlaceVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource, MKLocalSearchCompleterDelegate{
    
     
@@ -20,7 +23,7 @@ class SearchPlaceVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UI
    
     var searchResults = [MKLocalSearchCompletion]()
 
-    
+    var delegate: sendData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,13 +72,8 @@ class SearchPlaceVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UI
                 let search = MKLocalSearch(request: searchRequest)
                 search.start { (response, error) in
                     let coordinate = response?.mapItems[0].placemark.coordinate
-                    let popup = self.storyboard?.instantiateViewController(withIdentifier: "CurrentWeatherStory") as! ViewController
-                    let navigationController = UINavigationController(rootViewController: popup)
-                    navigationController.modalPresentationStyle = UIModalPresentationStyle.popover
-                    popup.latitude = coordinate?.latitude ?? 0.00
-                    popup.longitude = coordinate?.longitude ?? 0.00
-                    popup.isFromSearch = true
-                    self.present(navigationController, animated: true, completion: nil)
+                    self.dismiss(animated: true)
+                    self.delegate?.sendDataToVC(coordinate: coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0))
                     print(String(describing: coordinate))
                 }
     }
