@@ -200,7 +200,6 @@
 		C03254412C25B37D001875F6 /* Windy.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Windy.scn; sourceTree = "<group>"; };
 		C03254432C25B57F001875F6 /* Haze.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Haze.scn; sourceTree = "<group>"; };
 		C03254452C25D046001875F6 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
-		C04EE0092C26DF4E00DFAD7D /* API_DATA.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = API_DATA.xcconfig; sourceTree = "<group>"; };
 		C0940D9C2C25903900B141A8 /* Sun.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sun.scn; sourceTree = "<group>"; };
 		C0940DA02C2590B500B141A8 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		C09701DE2B2F5E1500EB8385 /* Beach.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Beach.mp4; path = "../../../../Weather videos/Beach.mp4"; sourceTree = "<group>"; };
@@ -255,7 +254,6 @@
 				34F5ADF02A67C25500E2AFBD /* Utils */,
 				34F5ADEE2A67C23400E2AFBD /* Views */,
 				345D2C402A66A3D400FFE6BE /* Fonts */,
-				C04EE0092C26DF4E00DFAD7D /* API_DATA.xcconfig */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
