@@ -57,6 +57,7 @@
 		C03254422C25B37D001875F6 /* Windy.scn in Resources */ = {isa = PBXBuildFile; fileRef = C03254412C25B37D001875F6 /* Windy.scn */; };
 		C03254442C25B57F001875F6 /* Haze.scn in Resources */ = {isa = PBXBuildFile; fileRef = C03254432C25B57F001875F6 /* Haze.scn */; };
 		C03254462C25D046001875F6 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03254452C25D046001875F6 /* WeatherCell.swift */; };
+		C03E34972C2828B7006424EC /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E34962C2828B7006424EC /* SettingsVC.swift */; };
 		C0940D9D2C25903900B141A8 /* Sun.scn in Resources */ = {isa = PBXBuildFile; fileRef = C0940D9C2C25903900B141A8 /* Sun.scn */; };
 		C0940DA12C2590B500B141A8 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0940DA02C2590B500B141A8 /* WeatherVC.swift */; };
 /* End PBXBuildFile section */
@@ -130,6 +131,7 @@
 		C03254412C25B37D001875F6 /* Windy.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Windy.scn; sourceTree = "<group>"; };
 		C03254432C25B57F001875F6 /* Haze.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Haze.scn; sourceTree = "<group>"; };
 		C03254452C25D046001875F6 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		C03E34962C2828B7006424EC /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		C04EE00A2C26E18500DFAD7D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		C0940D9C2C25903900B141A8 /* Sun.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sun.scn; sourceTree = "<group>"; };
 		C0940DA02C2590B500B141A8 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				34F5ADF82A67E48600E2AFBD /* SearchPlaceVC.swift */,
 				C026763D2B31445A00924422 /* StartupScreen.swift */,
 				C0940DA02C2590B500B141A8 /* WeatherVC.swift */,
+				C03E34962C2828B7006424EC /* SettingsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03E34972C2828B7006424EC /* SettingsVC.swift in Sources */,
 				345D2C1D2A667C9500FFE6BE /* HelperClass.swift in Sources */,
 				C03254462C25D046001875F6 /* WeatherCell.swift in Sources */,
 				34F5ADF92A67E48600E2AFBD /* SearchPlaceVC.swift in Sources */,
@@ -635,7 +639,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -670,7 +674,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

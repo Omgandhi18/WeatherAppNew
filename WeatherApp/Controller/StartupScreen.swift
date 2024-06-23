@@ -69,6 +69,10 @@ class StartupScreen: UIViewController,CLLocationManagerDelegate{
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 // your code here
                 let vc = self.storyboard?.instantiateViewController(identifier: "weatherStory") as! WeatherVC
+                if !UserDefaults.contains("settingsDict"){
+                    let settingsDict = ["tempUnit":"C","windUnit":"KM"]
+                    UserDefaults.standard.setValue(settingsDict, forKey: "settingsDict")
+                }
                 UIApplication.shared.windows.first?.rootViewController = vc
                 UIApplication.shared.windows.first?.makeKeyAndVisible()
             }

@@ -27,6 +27,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
     @IBOutlet weak var lblDay: UILabel!
     @IBOutlet weak var btnSearch: UIButton!
     @IBOutlet weak var btnCurrentLocation: UIButton!
+    @IBOutlet weak var lblRainChance: UILabel!
+    @IBOutlet weak var btnSettings: UIButton!
+    @IBOutlet weak var lblWind: UILabel!
+    @IBOutlet weak var imgWindDir: UIImageView!
+    @IBOutlet weak var lblWindSpeed: UILabel!
     
     
     var refreshControl = UIRefreshControl()
@@ -38,6 +43,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
     var dayArray = [CurrentConditions]()
     var hourArray = [CurrentConditions]()
     var collectionViewColor = UIColor()
+    var settingsDict = ["tempUnit":"C"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +69,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
         let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(pinchGesture))
         weatherIconView.addGestureRecognizer(pinchRecognizer)
         btnCurrentLocation.isHidden = true
+        
         
         // Do any additional setup after loading the view.
         
@@ -111,15 +118,31 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
                 responseModel = response
                 dayArray = response.days ?? []
                 hourArray = response.days?.first?.hours ?? []
+                settingsDict = UserDefaults.standard.value(forKey: "settingsDict") as? [String:String] ?? [:]
                 
-                lblTemperature.text = "\(String(format: "%.0f", round(response.currentConditions?.temp ?? 0.00)))° C"
-                
-                
+               
+                if settingsDict["tempUnit"] == "C"{
+                    lblTemperature.text = "\(String(format: "%.0f", round(response.currentConditions?.temp ?? 0.00)))° C"
+                    lblHighLow.text = "High: \(String(format: "%.0f", dayArray.first?.tempmax ?? 0))° C, Low: \(String(format: "%.0f", dayArray.first?.tempmin ?? 0))° C"
+                }
+                else{
+                    lblTemperature.text = "\(String(format: "%.0f", round(response.currentConditions?.temp?.celsiusToFahrenheit() ?? 0.00)))° F"
+                    lblHighLow.text = "High: \(String(format: "%.0f", dayArray.first?.tempmax?.celsiusToFahrenheit() ?? 0))° F, Low: \(String(format: "%.0f", dayArray.first?.tempmin?.celsiusToFahrenheit() ?? 0))° F"
+                }
                 lblConditions.text = response.currentConditions?.conditions?.rawValue
-                lblHighLow.text = "High: \(String(format: "%.0f", dayArray.first?.feelslikemax ?? 0))° C, Low: \(String(format: "%.0f", dayArray.first?.feelslikemin ?? 0))° C"
+                lblRainChance.text = "Chance of rain: \(String(format: "%.0f", response.currentConditions?.precipprob ?? 0.00))%"
+                let angle = NSNumber(value: (Float(response.currentConditions?.winddir ?? 0.00) / 180.0) * Float.pi)
+                imgWindDir.layer.setValue(angle, forKeyPath: "transform.rotation.z")
+                if settingsDict["windUnit"] == "KM"{
+                    lblWindSpeed.text = "\(response.currentConditions?.windspeed ?? 0.00) km/h"
+                }
+                else{
+                   
+                    lblWindSpeed.text = "\(String(format: "%.1f", response.currentConditions?.windspeed?.kmToMiles() ?? 0.00)) mph"
+                }
                 
                 
-                set3DModel(conditions: response.currentConditions?.conditions ?? .clear)
+                setWeatherUI(conditions: response.currentConditions?.conditions ?? .clear)
                 
                 clcWeek.delegate = self
                 clcWeek.dataSource = self
@@ -131,232 +154,121 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
                 }
             }
     }
-    func set3DModel(conditions: Conditions){
+    func setTintColours(color:UIColor)
+    {
+        lblTemperature.textColor = color
+        lblConditions.textColor = color
+        lblHighLow.textColor = color
+        lblCityCountry.textColor = color
+        lblDay.textColor = color
+        lblWeek.textColor = color
+        lblRainChance.textColor = color
+        lblWind.textColor = color
+        imgWindDir.tintColor = color
+        lblWindSpeed.textColor = color
+        collectionViewColor = color
+        btnSearch.tintColor = color
+        btnCurrentLocation.tintColor = color
+        btnSettings.tintColor = color
+    }
+    func setWeatherUI(conditions: Conditions){
         switch conditions{
             
         case .clear:
             weatherIconView.scene = SCNScene(named: "Clear.scn")
             mainScrollView.backgroundColor = UIColor(named: "clearWeather")
             self.view.backgroundColor = UIColor(named: "clearWeather")
-            lblTemperature.textColor = .black
-            lblConditions.textColor = .black
-            lblHighLow.textColor = .black
-            lblCityCountry.textColor = .black
-            lblDay.textColor = .black
-            lblWeek.textColor = .black
-            collectionViewColor = .black
-            btnSearch.tintColor = .black
-            btnCurrentLocation.tintColor = .black
+            setTintColours(color: .black)
             break
         case .overcast:
             weatherIconView.scene = SCNScene(named: "Overcast.scn")
             mainScrollView.backgroundColor = UIColor(named: "overcastWeather")
             self.view.backgroundColor = UIColor(named: "overcastWeather")
-            lblTemperature.textColor = .white
-            lblConditions.textColor = .white
-            lblHighLow.textColor = .white
-            lblCityCountry.textColor = .white
-            lblDay.textColor = .white
-            lblWeek.textColor = .white
-            collectionViewColor = .white
-            btnSearch.tintColor = .white
-            btnCurrentLocation.tintColor = .white
+            setTintColours(color: .white)
             break
         case .partiallyCloudy:
             weatherIconView.scene = SCNScene(named: "PartiallyCloudy.scn")
             mainScrollView.backgroundColor = UIColor(named: "partiallyCloudyWeather")
             self.view.backgroundColor = UIColor(named: "partiallyCloudyWeather")
-            lblTemperature.textColor = .black
-            lblConditions.textColor = .black
-            lblHighLow.textColor = .black
-            lblCityCountry.textColor = .black
-            lblDay.textColor = .black
-            lblWeek.textColor = .black
-            collectionViewColor = .black
-            btnSearch.tintColor = .black
-            btnCurrentLocation.tintColor = .black
+            setTintColours(color: .black)
             break
         case .rainOvercast:
             weatherIconView.scene = SCNScene(named: "RainOvercast.scn")
             mainScrollView.backgroundColor = UIColor(named: "rainOvercast")
             self.view.backgroundColor = UIColor(named: "rainOvercast")
-            lblTemperature.textColor = .white
-            lblConditions.textColor = .white
-            lblHighLow.textColor = .white
-            lblCityCountry.textColor = .white
-            lblDay.textColor = .white
-            lblWeek.textColor = .white
-            collectionViewColor = .white
-            btnSearch.tintColor = .white
-            btnCurrentLocation.tintColor = .white
+            setTintColours(color: .white)
             break
         case .snowOvercast:
             weatherIconView.scene = SCNScene(named: "SnowOvercast.scn")
             mainScrollView.backgroundColor = UIColor(named: "rainOvercast")
             self.view.backgroundColor = UIColor(named: "rainOvercast")
-            lblTemperature.textColor = .white
-            lblConditions.textColor = .white
-            lblHighLow.textColor = .white
-            lblCityCountry.textColor = .white
-            lblDay.textColor = .white
-            lblWeek.textColor = .white
-            collectionViewColor = .white
-            btnSearch.tintColor = .white
-            btnCurrentLocation.tintColor = .white
+            setTintColours(color: .white)
             break
         case .rainPartiallyCloudy:
             weatherIconView.scene = SCNScene(named: "RainPartiallyCloudy.scn")
             mainScrollView.backgroundColor = UIColor(named: "partiallyCloudyWeather")
             self.view.backgroundColor = UIColor(named: "partiallyCloudyWeather")
-            lblTemperature.textColor = .black
-            lblConditions.textColor = .black
-            lblHighLow.textColor = .black
-            lblCityCountry.textColor = .black
-            lblDay.textColor = .black
-            lblWeek.textColor = .black
-            collectionViewColor = .black
-            btnSearch.tintColor = .black
-            btnCurrentLocation.tintColor = .black
+            setTintColours(color: .black)
             break
         case .snowPartiallyCloudy:
             weatherIconView.scene = SCNScene(named: "SnowPartiallyCloudy.scn")
             mainScrollView.backgroundColor = UIColor(named: "partiallyCloudyWeather")
             self.view.backgroundColor = UIColor(named: "partiallyCloudyWeather")
-            lblTemperature.textColor = .black
-            lblConditions.textColor = .black
-            lblHighLow.textColor = .black
-            lblCityCountry.textColor = .black
-            lblDay.textColor = .black
-            lblWeek.textColor = .black
-            collectionViewColor = .black
-            btnSearch.tintColor = .black
-            btnCurrentLocation.tintColor = .black
+            setTintColours(color: .black)
             break
         case .snowRainPartiallyCloudy:
             weatherIconView.scene = SCNScene(named: "SnowRainPartially.scn")
             mainScrollView.backgroundColor = UIColor(named: "partiallyCloudyWeather")
             self.view.backgroundColor = UIColor(named: "partiallyCloudyWeather")
-            lblTemperature.textColor = .black
-            lblConditions.textColor = .black
-            lblHighLow.textColor = .black
-            lblCityCountry.textColor = .black
-            lblDay.textColor = .black
-            lblWeek.textColor = .black
-            collectionViewColor = .black
-            btnSearch.tintColor = .black
-            btnCurrentLocation.tintColor = .black
+            setTintColours(color: .black)
             break
         case .snowRainOvercast:
             weatherIconView.scene = SCNScene(named: "SnowRainOvercast.scn")
             mainScrollView.backgroundColor = UIColor(named: "overcastWeather")
             self.view.backgroundColor = UIColor(named: "overcastWeather")
-            lblTemperature.textColor = .white
-            lblConditions.textColor = .white
-            lblHighLow.textColor = .white
-            lblCityCountry.textColor = .white
-            lblDay.textColor = .white
-            lblWeek.textColor = .white
-            collectionViewColor = .white
-            btnSearch.tintColor = .white
-            btnCurrentLocation.tintColor = .white
+            setTintColours(color: .white)
             break
         case .rain:
             weatherIconView.scene = SCNScene(named: "Rain.scn")
             mainScrollView.backgroundColor = UIColor(named: "rainWeather")
             self.view.backgroundColor = UIColor(named: "rainWeather")
-            lblTemperature.textColor = .white
-            lblConditions.textColor = .white
-            lblHighLow.textColor = .white
-            lblCityCountry.textColor = .white
-            lblDay.textColor = .white
-            lblWeek.textColor = .white
-            collectionViewColor = .white
-            btnSearch.tintColor = .white
-            btnCurrentLocation.tintColor = .white
+            setTintColours(color: .white)
             break
         case .snowy:
             weatherIconView.scene = SCNScene(named: "Snow.scn")
             mainScrollView.backgroundColor = UIColor(named: "snowWeather")
             self.view.backgroundColor = UIColor(named: "snowWeather")
-            lblTemperature.textColor = .black
-            lblConditions.textColor = .black
-            lblHighLow.textColor = .black
-            lblCityCountry.textColor = .black
-            lblDay.textColor = .black
-            lblWeek.textColor = .black
-            collectionViewColor = .black
-            btnSearch.tintColor = .black
-            btnCurrentLocation.tintColor = .black
+            setTintColours(color: .black)
             break
         case .storm:
             weatherIconView.scene = SCNScene(named: "Storm.scn")
             mainScrollView.backgroundColor = UIColor(named: "rainWeather")
             self.view.backgroundColor = UIColor(named: "rainWeather")
-            lblTemperature.textColor = .white
-            lblConditions.textColor = .white
-            lblHighLow.textColor = .white
-            lblCityCountry.textColor = .white
-            lblDay.textColor = .white
-            lblWeek.textColor = .white
-            collectionViewColor = .white
-            btnSearch.tintColor = .white
-            btnCurrentLocation.tintColor = .white
+            setTintColours(color: .white)
             break
         case .windy:
             weatherIconView.scene = SCNScene(named: "Windy.scn")
             mainScrollView.backgroundColor = UIColor(named: "windyWeather")
             self.view.backgroundColor = UIColor(named: "windyWeather")
-            lblTemperature.textColor = .black
-            lblConditions.textColor = .black
-            lblHighLow.textColor = .black
-            lblCityCountry.textColor = .black
-            lblDay.textColor = .black
-            lblWeek.textColor = .black
-            collectionViewColor = .black
-            btnSearch.tintColor = .black
-            btnCurrentLocation.tintColor = .black
+            setTintColours(color: .black)
             break
         case .dry:
             weatherIconView.scene = SCNScene(named: "Sun.scn")
             mainScrollView.backgroundColor = UIColor(named: "dryWeather")
             self.view.backgroundColor = UIColor(named: "dryWeather")
-            lblTemperature.textColor = .black
-            lblConditions.textColor = .black
-            lblHighLow.textColor = .black
-            lblCityCountry.textColor = .black
-            lblDay.textColor = .black
-            lblWeek.textColor = .black
-            collectionViewColor = .black
-            btnSearch.tintColor = .black
-            btnCurrentLocation.tintColor = .black
+            setTintColours(color: .black)
             break
         case .fog:
             weatherIconView.scene = SCNScene(named: "PartiallyCloudy.scn")
             mainScrollView.backgroundColor = UIColor(named: "foggyWeather")
             self.view.backgroundColor = UIColor(named: "foggyWeather")
-            lblTemperature.textColor = .black
-            lblConditions.textColor = .black
-            lblHighLow.textColor = .black
-            lblCityCountry.textColor = .black
-            lblDay.textColor = .black
-            lblWeek.textColor = .black
-            collectionViewColor = .black
-            btnSearch.tintColor = .black
-            btnCurrentLocation.tintColor = .black
+            setTintColours(color: .black)
             break
         case .haze:
             weatherIconView.scene = SCNScene(named: "Haze.scn")
             mainScrollView.backgroundColor = UIColor(named: "foggyWeather")
             self.view.backgroundColor = UIColor(named: "foggyWeather")
-            lblTemperature.textColor = .black
-            lblConditions.textColor = .black
-            lblHighLow.textColor = .black
-            lblCityCountry.textColor = .black
-            lblDay.textColor = .black
-            lblWeek.textColor = .black
-            collectionViewColor = .black
-            btnSearch.tintColor = .black
-            btnCurrentLocation.tintColor = .black
+            setTintColours(color: .black)
             break
         }
         
@@ -471,8 +383,17 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             }
             cell.imgWeather.tintColor = collectionViewColor
             cell.lblDate.text = displayedDate
-            cell.lblMax.text = "\(String(format: "%.0f", dayWeather.feelslikemax ?? 0))° C"
-            cell.lblMin.text = "\(String(format: "%.0f", dayWeather.feelslikemin ?? 0))° C"
+            settingsDict = UserDefaults.standard.value(forKey: "settingsDict") as? [String:String] ?? [:]
+            if settingsDict["tempUnit"] == "C"{
+                cell.lblMax.text = "\(String(format: "%.0f", dayWeather.feelslikemax ?? 0))° C"
+                cell.lblMin.text = "\(String(format: "%.0f", dayWeather.feelslikemin ?? 0))° C"
+            }
+            else{
+                cell.lblMax.text = "\(String(format: "%.0f", dayWeather.feelslikemax?.celsiusToFahrenheit() ?? 0))° F"
+                cell.lblMin.text = "\(String(format: "%.0f", dayWeather.feelslikemin?.celsiusToFahrenheit() ?? 0))° F"
+            }
+            
+           
             cell.makeViewBorderWithCurve(radius: 10,bcolor: collectionViewColor,bwidth: 2)
             cell.lblDate.textColor = collectionViewColor
             cell.lblMin.textColor = collectionViewColor
@@ -545,8 +466,16 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             }
             cell.imgWeather.tintColor = collectionViewColor
             cell.lblDate.text = displayedDate
-            cell.lblMax.text = "\(String(format: "%.0f", dayWeather.feelslike ?? 0))° C"
-            cell.lblMin.text = "\(String(format: "%.0f", dayWeather.temp ?? 0))° C"
+            settingsDict = UserDefaults.standard.value(forKey: "settingsDict") as? [String:String] ?? [:]
+            if settingsDict["tempUnit"] == "C"{
+                cell.lblMax.text = "\(String(format: "%.0f", dayWeather.feelslike ?? 0))° C"
+                cell.lblMin.text = "\(String(format: "%.0f", dayWeather.temp ?? 0))° C"
+            }
+            else{
+                cell.lblMax.text = "\(String(format: "%.0f", dayWeather.feelslike?.celsiusToFahrenheit() ?? 0))° F"
+                cell.lblMin.text = "\(String(format: "%.0f", dayWeather.temp?.celsiusToFahrenheit() ?? 0))° F"
+            }
+            
             cell.makeViewBorderWithCurve(radius: 10,bcolor: collectionViewColor,bwidth: 2)
             cell.lblDate.textColor = collectionViewColor
             cell.lblMin.textColor = collectionViewColor
@@ -578,4 +507,27 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
         }
         btnCurrentLocation.isHidden = true
     }
+    
+    @IBAction func btnSettings(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "settingsStory") as! SettingsVC
+        vc.presentationController?.delegate = self
+        if let presentationController = vc.presentationController as? UISheetPresentationController {
+            presentationController.detents = [.medium()]
+        }
+        
+        vc.completion = {
+            if let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String{
+                self.getCity(api_key: apiKey, latitude: self.latitude, longitude: self.longitude)
+            }
+        }
+        
+        present(vc, animated: true)
+    }
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        if let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String{
+            self.getCity(api_key: apiKey, latitude: self.latitude, longitude: self.longitude)
+        }
+    }
+    
+    
 }

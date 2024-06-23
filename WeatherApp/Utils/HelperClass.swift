@@ -156,6 +156,15 @@ extension UIButton {
      
         
     }
+    func neumorphicButton(bgColor: UIColor, tintColor: UIColor) {
+//        layer.cornerRadius = frame.height / 2
+//        layer.shadowColor = UIColor.darkGray.cgColor
+//        layer.shadowOffset = CGSize(width: 5, height: 5)
+//        layer.shadowOpacity = 0.7
+//        layer.shadowRadius = 5
+        self.tintColor = tintColor
+        layer.backgroundColor = bgColor.cgColor
+    }
 }
 
 //===================================================================
@@ -217,7 +226,14 @@ extension UIColor {
 //    static let labelColor                 = UIColor(named: "labelColor")              // #165E97
     static let whiteTransparent = UIColor(named: "white_transparent")
 }
-
+extension Double{
+    func celsiusToFahrenheit() -> Self {
+       return (self * 9/5) + 32
+    }
+    func kmToMiles() -> Self{
+        return (self * 0.621371)
+    }
+}
 extension DateFormatter {
     static let today: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -227,4 +243,9 @@ extension DateFormatter {
         return dateFormatter
         
     }()
+}
+extension UserDefaults {
+    static func contains(_ key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
+    }
 }
