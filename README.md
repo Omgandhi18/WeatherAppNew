@@ -11,8 +11,10 @@
     <p>To use the app, follow these simple steps:</p>
     <ol>
         <li>Clone the Github Repo or download the zip file.</li>
+        <li>Open terminal into the folder where the project is and run `pod install`</li>
         <li>Open the app in Xcode.</li>
-      <li>Run the app on your mobile or simulator. </li>
+        <li>Get your API key from Visual Crossing and insert it into the Info.plist file</li>
+        <li>Run the app on your mobile or simulator. </li>
         <li>Allow location access for accurate local weather information.</li>
         <li>Explore the app's features and enjoy staying updated on the weather.</li>
     </ol>
@@ -20,7 +22,6 @@
     <p>The OG Weather App uses the following external libraries:</p>
     <ul>
         <li><a href="https://github.com/Alamofire/Alamofire" target="_blank">Alamofire</a></li>
-        <li><a href="https://github.com/SDWebImage/SDWebImage" target="_blank">SDWebImage</a></li>
       <li><a href="https://github.com/SVProgressHUD/SVProgressHUD" target="_blank">SVProgressHud</a></li>
     </ul>
     <h2>Photos and Videos</h2>
@@ -30,4 +31,4 @@
     <img src = "Simulator Screenshot - iPhone 15 Pro Max - 2023-12-19 at 17.39.53.png" height = 400px width = 200px></img>
 
 <h2>Contributing</h2>
-    <p>Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on our <a href="https://github.com/yourusername/ios-weather-app" target="_blank">GitHub repository</a>.</p>
+    <p>Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on our <a href="https://github.com/Omgandhi18/ios-weather-app" target="_blank">GitHub repository</a>.</p>
