@@ -118,7 +118,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhm-nO-ail">
-                                                                    <rect key="frame" x="31.333333333333329" y="46.333333333333336" width="57.666666666666671" height="27.666666666666664"/>
+                                                                    <rect key="frame" x="31.333333333333332" y="46.333333333333336" width="57.666666666666671" height="27.666666666666664"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                                                     <color key="textColor" name="background"/>
                                                                     <nil key="highlightedColor"/>
@@ -212,7 +212,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3w-4O-ptM">
-                                                                    <rect key="frame" x="31.333333333333329" y="46.333333333333336" width="57.666666666666671" height="27.666666666666664"/>
+                                                                    <rect key="frame" x="31.333333333333332" y="46.333333333333336" width="57.666666666666671" height="27.666666666666664"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                                                     <color key="textColor" name="background"/>
                                                                     <nil key="highlightedColor"/>
@@ -799,13 +799,22 @@
                                             <constraint firstItem="ExV-8T-dHz" firstAttribute="centerX" secondItem="tUx-F1-Wsy" secondAttribute="centerX" id="w9a-U3-PIo"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Weather 3D icon visualisation baked by Rob Li is licensed under Creative Commons Attribution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNa-Hu-JFC">
+                                        <rect key="frame" x="8" y="766" width="414" height="8.6666666666666288"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="BNa-Hu-JFC" secondAttribute="trailing" constant="8" id="57T-aI-7BT"/>
                                     <constraint firstAttribute="trailing" secondItem="tUx-F1-Wsy" secondAttribute="trailing" id="AaW-mc-F5X"/>
                                     <constraint firstItem="tUx-F1-Wsy" firstAttribute="top" secondItem="TDy-Kb-tge" secondAttribute="top" id="Jga-Rx-ADh"/>
                                     <constraint firstItem="tUx-F1-Wsy" firstAttribute="centerX" secondItem="TDy-Kb-tge" secondAttribute="centerX" id="Pvz-bP-q5m"/>
                                     <constraint firstItem="tUx-F1-Wsy" firstAttribute="leading" secondItem="TDy-Kb-tge" secondAttribute="leading" id="bwl-zk-51r"/>
+                                    <constraint firstItem="BNa-Hu-JFC" firstAttribute="leading" secondItem="TDy-Kb-tge" secondAttribute="leading" constant="8" id="cdQ-Ag-EmK"/>
                                     <constraint firstAttribute="bottom" secondItem="tUx-F1-Wsy" secondAttribute="bottom" id="dfg-AO-2hj"/>
+                                    <constraint firstItem="BNa-Hu-JFC" firstAttribute="top" secondItem="tUx-F1-Wsy" secondAttribute="bottom" constant="16" id="gUi-XC-alc"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
