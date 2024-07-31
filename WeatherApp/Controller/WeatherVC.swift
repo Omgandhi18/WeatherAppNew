@@ -199,11 +199,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "Clear.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "clearWeather")
             self.view.backgroundColor = UIColor(named: "clearWeather")
             setTintColours(color: .black)
@@ -212,11 +212,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "Overcast.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "overcastWeather")
             self.view.backgroundColor = UIColor(named: "overcastWeather")
             setTintColours(color: .white)
@@ -225,11 +225,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "PartiallyCloudy.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "partiallyCloudyWeather")
             self.view.backgroundColor = UIColor(named: "partiallyCloudyWeather")
             setTintColours(color: .black)
@@ -238,11 +238,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "RainOvercast.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "rainOvercast")
             self.view.backgroundColor = UIColor(named: "rainOvercast")
             setTintColours(color: .white)
@@ -251,11 +251,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "SnowOvercast.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "rainOvercast")
             self.view.backgroundColor = UIColor(named: "rainOvercast")
             setTintColours(color: .white)
@@ -264,11 +264,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "RainPartiallyCloudy.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "partiallyCloudyWeather")
             self.view.backgroundColor = UIColor(named: "partiallyCloudyWeather")
             setTintColours(color: .black)
@@ -277,11 +277,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "SnowPartiallyCloudy.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "partiallyCloudyWeather")
             self.view.backgroundColor = UIColor(named: "partiallyCloudyWeather")
             setTintColours(color: .black)
@@ -290,11 +290,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "SnowRainPartially.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "partiallyCloudyWeather")
             self.view.backgroundColor = UIColor(named: "partiallyCloudyWeather")
             setTintColours(color: .black)
@@ -303,11 +303,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "SnowRainOvercast.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "overcastWeather")
             self.view.backgroundColor = UIColor(named: "overcastWeather")
             setTintColours(color: .white)
@@ -316,11 +316,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "Rain.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "rainWeather")
             self.view.backgroundColor = UIColor(named: "rainWeather")
             setTintColours(color: .white)
@@ -329,11 +329,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "Snow.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "snowWeather")
             self.view.backgroundColor = UIColor(named: "snowWeather")
             setTintColours(color: .black)
@@ -342,11 +342,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "Storm.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "rainWeather")
             self.view.backgroundColor = UIColor(named: "rainWeather")
             setTintColours(color: .white)
@@ -355,11 +355,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "Windy.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "windyWeather")
             self.view.backgroundColor = UIColor(named: "windyWeather")
             setTintColours(color: .black)
@@ -368,11 +368,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "Sun.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "dryWeather")
             self.view.backgroundColor = UIColor(named: "dryWeather")
             setTintColours(color: .black)
@@ -381,11 +381,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "PartiallyCloudy.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "foggyWeather")
             self.view.backgroundColor = UIColor(named: "foggyWeather")
             setTintColours(color: .black)
@@ -394,11 +394,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
             let animation:CATransition = CATransition()
             animation.timingFunction = CAMediaTimingFunction(name:
                 CAMediaTimingFunctionName.easeInEaseOut)
-            animation.type = CATransitionType.push
+            animation.type = CATransitionType.fade
             animation.subtype = CATransitionSubtype.fromTop
             animation.duration = 0.5
             weatherIconView.scene = SCNScene(named: "Haze.scn")
-            self.weatherIconView.layer.add(animation, forKey: CATransitionType.push.rawValue)
+            self.weatherIconView.layer.add(animation, forKey: CATransitionType.fade.rawValue)
             mainScrollView.backgroundColor = UIColor(named: "foggyWeather")
             self.view.backgroundColor = UIColor(named: "foggyWeather")
             setTintColours(color: .black)
