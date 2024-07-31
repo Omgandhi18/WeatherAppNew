@@ -94,7 +94,7 @@ func CallService<T: Codable>( Model_Name    : T.Type,
                                 OnFail      :@escaping(String) ->Void)
 {
     //MARK: - Set Progress Hud
-    Progress.showProgress()
+//    Progress.showProgress()
     
     print("\n\n------------Request URL ------------\n", URLstr);
     if let param = parameters {
@@ -124,7 +124,7 @@ func CallService<T: Codable>( Model_Name    : T.Type,
             if (200...300).contains(response.response?.statusCode ?? 0){
                 switch response.result{
                 case .success(let ModelClass):
-                    Progress.dismissProgress()
+//                    Progress.dismissProgress()
                     
                     //Below Code Only Used to print Response of Server in Json Format
                     do {
@@ -139,20 +139,20 @@ func CallService<T: Codable>( Model_Name    : T.Type,
                     break
                 case .failure(let err):
                     print(err)
-                    Progress.dismissProgress()
+//                    Progress.dismissProgress()
                     showAlertController(message: AlertMsg.failService.rawValue, forOther: "OK", isSingle: true) { btnString in }
                 }
                 
             }
             else{
                 print("Fail")
-                Progress.dismissProgress()
+//                Progress.dismissProgress()
                 showAlertController(message: AlertMsg.somethingWrong.rawValue, forOther: "Try Again !!", isSingle: true, textAlignment: .center) { btnString in }
             }
         }
     } else {
         print("Fail")
-        Progress.dismissProgress()
+//        Progress.dismissProgress()
         showAlertController("No Internet Connection",message: "Make sure your device is connected to the internet.", forOther: "Try Again !!", isSingle: true, textAlignment: .center) { btnString in }
     }
     
