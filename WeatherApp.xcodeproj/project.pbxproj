@@ -60,6 +60,7 @@
 		C03E34972C2828B7006424EC /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03E34962C2828B7006424EC /* SettingsVC.swift */; };
 		C0940D9D2C25903900B141A8 /* Sun.scn in Resources */ = {isa = PBXBuildFile; fileRef = C0940D9C2C25903900B141A8 /* Sun.scn */; };
 		C0940DA12C2590B500B141A8 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0940DA02C2590B500B141A8 /* WeatherVC.swift */; };
+		C099C1072C7B8F4D00CB3FE5 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C099C1062C7B8F4D00CB3FE5 /* InfoPlist.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -135,6 +136,7 @@
 		C0940D9C2C25903900B141A8 /* Sun.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Sun.scn; sourceTree = "<group>"; };
 		C0940DA02C2590B500B141A8 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		C099C1052C7B4B9000CB3FE5 /* WeatherApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeatherApp.entitlements; sourceTree = "<group>"; };
+		C099C1062C7B8F4D00CB3FE5 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		C4B24E6493128D9A1205AE95 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +178,7 @@
 				C026764C2B31928D00924422 /* LogoDark.gif */,
 				C0940D9B2C25900800B141A8 /* 3D Models */,
 				345D2C142A667C0700FFE6BE /* Info.plist */,
+				C099C1062C7B8F4D00CB3FE5 /* InfoPlist.xcstrings */,
 				34F5ADF32A67C28F00E2AFBD /* Core */,
 				34F5ADF22A67C27B00E2AFBD /* Controller */,
 				34F5ADF12A67C26C00E2AFBD /* Model */,
@@ -357,6 +360,45 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				ca,
+				"zh-HK",
+				"zh-Hans",
+				"zh-Hant",
+				hr,
+				cs,
+				da,
+				nl,
+				"en-AU",
+				"en-IN",
+				"en-GB",
+				fi,
+				fr,
+				"fr-CA",
+				de,
+				el,
+				he,
+				hi,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				nb,
+				pl,
+				"pt-BR",
+				"pt-PT",
+				ro,
+				ru,
+				sk,
+				es,
+				"es-419",
+				sv,
+				th,
+				tr,
+				uk,
+				vi,
 			);
 			mainGroup = 345D2BFA2A667C0500FFE6BE;
 			productRefGroup = 345D2C042A667C0500FFE6BE /* Products */;
@@ -379,6 +421,7 @@
 				345D2C642A66A3D400FFE6BE /* Poppins-Thin.ttf in Resources */,
 				345D2C5F2A66A3D400FFE6BE /* Poppins-BlackItalic.ttf in Resources */,
 				345D2C652A66A3D400FFE6BE /* Poppins-SemiBold.ttf in Resources */,
+				C099C1072C7B8F4D00CB3FE5 /* InfoPlist.xcstrings in Resources */,
 				345D2C622A66A3D400FFE6BE /* Poppins-Bold.ttf in Resources */,
 				C026764E2B31928D00924422 /* LogoDark.gif in Resources */,
 				345D2C562A66A3D400FFE6BE /* Poppins-ExtraLight.ttf in Resources */,

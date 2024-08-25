@@ -13,10 +13,6 @@ import WeatherKit
 
 class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, sendData{
     
-    
-    
-    
-    
     @IBOutlet weak var lblCityCountry: UILabel!
     @IBOutlet weak var lblTemperature: UILabel!
     @IBOutlet weak var lblConditions: UILabel!
@@ -76,6 +72,11 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
         weatherIconView.addGestureRecognizer(pinchRecognizer)
         btnCurrentLocation.isHidden = true
         
+        lblWeatherAttribute.isUserInteractionEnabled = true
+        let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.linkLabelTapped(_:)))
+        self.lblWeatherAttribute.isUserInteractionEnabled = true
+        self.lblWeatherAttribute.addGestureRecognizer(labelTap)
+        
         
         // Do any additional setup after loading the view.
         
@@ -86,7 +87,9 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
     override func viewDidAppear(_ animated: Bool) {
         getCity(latitude: self.latitude, longitude: self.longitude)
     }
-    
+    @objc func linkLabelTapped(_ sender: UITapGestureRecognizer){
+        UIApplication.shared.open(URL(string: "https://developer.apple.com/weatherkit/data-source-attribution/")!)
+    }
     @objc func getCity(latitude: Double, longitude: Double){
         
         DispatchQueue.main.async {
@@ -151,7 +154,6 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
                 }
                 dayArray = result.dailyForecast.forecast
                 hourArray = result.hourlyForecast.forecast
-                print(dayArray)
                 let dailyForecast = result.dailyForecast.first { Calendar.current.isDateInToday($0.date) }
                         if let dailyForecast = dailyForecast {
                             
