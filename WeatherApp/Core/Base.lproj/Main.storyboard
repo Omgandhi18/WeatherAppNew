@@ -562,7 +562,7 @@
                                 <rect key="frame" x="0.0" y="59" width="430" height="873"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUx-F1-Wsy">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="750"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="800"/>
                                         <subviews>
                                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" allowsCameraControl="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vw-yS-xQd">
                                                 <rect key="frame" x="0.0" y="72" width="430" height="300"/>
@@ -758,25 +758,42 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chances of rain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJq-76-xcM">
-                                                <rect key="frame" x="223" y="469.66666666666663" width="162" height="18.333333333333314"/>
+                                                <rect key="frame" x="223" y="469.66666666666663" width="177" height="18.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                 <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Weather 3D icon visualisation baked by Rob Li is licensed under Creative Commons Attribution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNa-Hu-JFC">
+                                                <rect key="frame" x="8" y="761" width="414" height="8.6666666666666288"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecast by  Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tu-PO-q91">
+                                                <rect key="frame" x="8" y="727" width="414" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="1tu-PO-q91" firstAttribute="top" secondItem="yCu-aN-bvH" secondAttribute="bottom" constant="30" id="0ke-Zi-2Bn"/>
                                             <constraint firstItem="EQN-1C-yxy" firstAttribute="top" secondItem="tUx-F1-Wsy" secondAttribute="top" constant="16" id="1ZW-TO-CSB"/>
+                                            <constraint firstItem="BNa-Hu-JFC" firstAttribute="top" secondItem="1tu-PO-q91" secondAttribute="bottom" constant="16" id="8SI-45-zYm"/>
                                             <constraint firstItem="COY-Ks-MuB" firstAttribute="top" secondItem="nJq-76-xcM" secondAttribute="bottom" constant="30" id="8kD-sV-bhy"/>
                                             <constraint firstAttribute="trailing" secondItem="saD-fD-eFR" secondAttribute="trailing" constant="24" id="8rP-62-n1Q"/>
                                             <constraint firstItem="qrn-Gl-K34" firstAttribute="leading" secondItem="tUx-F1-Wsy" secondAttribute="leading" constant="45" id="BPP-KX-Dze"/>
                                             <constraint firstItem="saD-fD-eFR" firstAttribute="top" secondItem="ilF-xr-V08" secondAttribute="bottom" constant="8" id="CO1-XB-o0e"/>
                                             <constraint firstItem="yCu-aN-bvH" firstAttribute="top" secondItem="ExV-8T-dHz" secondAttribute="bottom" constant="24" id="DUh-ty-Oth"/>
                                             <constraint firstItem="EQN-1C-yxy" firstAttribute="leading" secondItem="tUx-F1-Wsy" secondAttribute="leading" constant="16" id="DrT-Xk-zLg"/>
+                                            <constraint firstItem="1tu-PO-q91" firstAttribute="leading" secondItem="tUx-F1-Wsy" secondAttribute="leading" constant="8" id="FgA-Mw-cJK"/>
+                                            <constraint firstItem="BNa-Hu-JFC" firstAttribute="leading" secondItem="tUx-F1-Wsy" secondAttribute="leading" constant="8" id="Ii1-oo-aQA"/>
                                             <constraint firstItem="nJq-76-xcM" firstAttribute="top" secondItem="saD-fD-eFR" secondAttribute="bottom" constant="8" id="IuS-uG-fak"/>
-                                            <constraint firstAttribute="trailing" secondItem="nJq-76-xcM" secondAttribute="trailing" constant="45" id="J9q-wU-lcp"/>
+                                            <constraint firstAttribute="trailing" secondItem="nJq-76-xcM" secondAttribute="trailing" constant="30" id="J9q-wU-lcp"/>
                                             <constraint firstItem="yCu-aN-bvH" firstAttribute="leading" secondItem="tUx-F1-Wsy" secondAttribute="leading" constant="16" id="JW9-Wl-tdO"/>
-                                            <constraint firstAttribute="height" constant="750" id="Noz-qb-q0u"/>
+                                            <constraint firstAttribute="height" constant="800" id="Noz-qb-q0u"/>
+                                            <constraint firstAttribute="trailing" secondItem="1tu-PO-q91" secondAttribute="trailing" constant="8" id="Ok7-Ad-gRm"/>
                                             <constraint firstAttribute="trailing" secondItem="yCu-aN-bvH" secondAttribute="trailing" constant="16" id="PuN-lw-LB0"/>
                                             <constraint firstAttribute="trailing" secondItem="vFM-qU-tBC" secondAttribute="trailing" constant="16" id="T1b-sj-yiE"/>
                                             <constraint firstAttribute="trailing" secondItem="yQ3-Yc-dlW" secondAttribute="trailing" constant="16" id="TPr-zn-ZVc"/>
@@ -787,6 +804,7 @@
                                             <constraint firstItem="nJq-76-xcM" firstAttribute="leading" secondItem="qrn-Gl-K34" secondAttribute="trailing" constant="8" id="cKF-df-Z6o"/>
                                             <constraint firstAttribute="trailing" secondItem="4vw-yS-xQd" secondAttribute="trailing" id="cMA-WF-w5M"/>
                                             <constraint firstAttribute="trailing" secondItem="ilF-xr-V08" secondAttribute="trailing" constant="24" id="e95-QK-2UY"/>
+                                            <constraint firstAttribute="trailing" secondItem="BNa-Hu-JFC" secondAttribute="trailing" constant="8" id="eHD-9H-5jd"/>
                                             <constraint firstItem="POR-zn-iNx" firstAttribute="top" secondItem="nJq-76-xcM" secondAttribute="bottom" constant="30" id="ebU-pg-D7u"/>
                                             <constraint firstItem="POR-zn-iNx" firstAttribute="leading" secondItem="ExV-8T-dHz" secondAttribute="trailing" constant="16" id="elJ-8Y-2cg"/>
                                             <constraint firstItem="ilF-xr-V08" firstAttribute="leading" secondItem="qrn-Gl-K34" secondAttribute="trailing" constant="8" id="fCk-d4-hDC"/>
@@ -799,22 +817,13 @@
                                             <constraint firstItem="ExV-8T-dHz" firstAttribute="centerX" secondItem="tUx-F1-Wsy" secondAttribute="centerX" id="w9a-U3-PIo"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Weather 3D icon visualisation baked by Rob Li is licensed under Creative Commons Attribution" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNa-Hu-JFC">
-                                        <rect key="frame" x="8" y="766" width="414" height="8.6666666666666288"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="BNa-Hu-JFC" secondAttribute="trailing" constant="8" id="57T-aI-7BT"/>
                                     <constraint firstAttribute="trailing" secondItem="tUx-F1-Wsy" secondAttribute="trailing" id="AaW-mc-F5X"/>
                                     <constraint firstItem="tUx-F1-Wsy" firstAttribute="top" secondItem="TDy-Kb-tge" secondAttribute="top" id="Jga-Rx-ADh"/>
                                     <constraint firstItem="tUx-F1-Wsy" firstAttribute="centerX" secondItem="TDy-Kb-tge" secondAttribute="centerX" id="Pvz-bP-q5m"/>
                                     <constraint firstItem="tUx-F1-Wsy" firstAttribute="leading" secondItem="TDy-Kb-tge" secondAttribute="leading" id="bwl-zk-51r"/>
-                                    <constraint firstItem="BNa-Hu-JFC" firstAttribute="leading" secondItem="TDy-Kb-tge" secondAttribute="leading" constant="8" id="cdQ-Ag-EmK"/>
                                     <constraint firstAttribute="bottom" secondItem="tUx-F1-Wsy" secondAttribute="bottom" id="dfg-AO-2hj"/>
-                                    <constraint firstItem="BNa-Hu-JFC" firstAttribute="top" secondItem="tUx-F1-Wsy" secondAttribute="bottom" constant="16" id="gUi-XC-alc"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -838,8 +847,10 @@
                         <outlet property="lblConditions" destination="ilF-xr-V08" id="xid-ei-zZB"/>
                         <outlet property="lblDay" destination="COY-Ks-MuB" id="iVj-9R-Mjn"/>
                         <outlet property="lblHighLow" destination="saD-fD-eFR" id="6hY-u2-ZbO"/>
+                        <outlet property="lblModelAttribute" destination="BNa-Hu-JFC" id="TLK-uj-7JC"/>
                         <outlet property="lblRainChance" destination="nJq-76-xcM" id="VR7-aE-vKb"/>
                         <outlet property="lblTemperature" destination="qrn-Gl-K34" id="QKa-bo-1sh"/>
+                        <outlet property="lblWeatherAttribute" destination="1tu-PO-q91" id="tf3-Jd-I3c"/>
                         <outlet property="lblWeek" destination="POR-zn-iNx" id="ne0-j8-TJA"/>
                         <outlet property="lblWind" destination="fr6-Hl-6lD" id="AYu-fo-oQT"/>
                         <outlet property="lblWindSpeed" destination="YqF-kJ-aIS" id="jpU-Mw-rwa"/>
@@ -1089,7 +1100,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

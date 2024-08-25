@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WeatherKit
 struct ResponseModelData: Codable{
     var queryCost: Double?
     var latitude, longitude: Double?
