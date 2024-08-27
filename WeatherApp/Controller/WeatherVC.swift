@@ -72,6 +72,10 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
         weatherIconView.addGestureRecognizer(pinchRecognizer)
         btnCurrentLocation.isHidden = true
         
+        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue]
+        let underlineAttributedString = NSAttributedString(string: "Forecast by  Weather", attributes: underlineAttribute)
+        lblWeatherAttribute.attributedText = underlineAttributedString
+        
         lblWeatherAttribute.isUserInteractionEnabled = true
         let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.linkLabelTapped(_:)))
         self.lblWeatherAttribute.isUserInteractionEnabled = true
@@ -128,14 +132,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
                     lblTemperature.text = "\(String(format: "%.0f", round(result.currentWeather.temperature.value)))° C"
                     //                    UIView.transition(with: lblTemperature, duration: 1.0,options: .transitionCrossDissolve, animations:{[weak self] in
                     //                        self?.
-                    //                    } )
-                    let animation:CATransition = CATransition()
-                    animation.timingFunction = CAMediaTimingFunction(name:
-                                                                        CAMediaTimingFunctionName.easeInEaseOut)
-                    animation.type = CATransitionType.push
-                    animation.subtype = CATransitionSubtype.fromTop
-                    animation.duration = 0.5
-                    self.lblTemperature.layer.add(animation, forKey: CATransitionType.push.rawValue)
+                    //                    } )x
                     lblHighLow.text = "High: \(String(format: "%.0f", result.dailyForecast.first?.highTemperature.value ?? 0))° C, Low: \(String(format: "%.0f", result.dailyForecast.first?.lowTemperature.value ?? 0))° C"
                 }
                 else{
@@ -143,13 +140,6 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
                     //                    UIView.transition(with: lblTemperature, duration: 1.0,options: .transitionCrossDissolve, animations:{[weak self] in
                     //                        self?.
                     //                    } )
-                    let animation:CATransition = CATransition()
-                    animation.timingFunction = CAMediaTimingFunction(name:
-                                                                        CAMediaTimingFunctionName.easeInEaseOut)
-                    animation.type = CATransitionType.push
-                    animation.subtype = CATransitionSubtype.fromTop
-                    animation.duration = 0.5
-                    self.lblTemperature.layer.add(animation, forKey: CATransitionType.push.rawValue)
                     lblHighLow.text = "High: \(String(format: "%.0f", result.dailyForecast.first?.highTemperature.value.celsiusToFahrenheit() ?? 0))° F, Low: \(String(format: "%.0f", result.dailyForecast.first?.lowTemperature.value.celsiusToFahrenheit() ?? 0))° F"
                 }
                 dayArray = result.dailyForecast.forecast
