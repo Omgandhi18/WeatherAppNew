@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 import SceneKit
 import WeatherKit
+import SplineRuntime
 
 
 class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, sendData{
@@ -682,7 +683,7 @@ class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if switchDayWeek.isOn{
-            return 7
+            return 10
         }
         return 24
     }
