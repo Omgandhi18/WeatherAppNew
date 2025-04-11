@@ -9,7 +9,6 @@ import UIKit
 import CoreLocation
 import SceneKit
 import WeatherKit
-import SplineRuntime
 
 
 class WeatherVC: UIViewController, CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, sendData{

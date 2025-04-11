@@ -6,9 +6,6 @@ target 'WeatherApp' do
   use_frameworks!
 
   # Pods for WeatherApp
-  pod 'Alamofire'
-  pod 'Charts'
-  pod 'SDWebImage'
   pod 'IQKeyboardManagerSwift'
   pod 'SVProgressHUD'
 end
